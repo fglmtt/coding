@@ -361,16 +361,6 @@ Programming is as much an act of communication, from one human to another, as it
 
 ---
 
-Automated program repair is based on the assumption that program source code changes that occur during development can often be constructed from grafts
-
-> Changes to a codebase contain snippets that already exist in the codebase at the time of the change, and these snippets can be efficiently found and exploited (the plastic surgery hypothesis)
-> 
-> -- [Barr, E. et al.](https://dl.acm.org/doi/10.1145/2635868.2635898)
-
-The plastic surgery hypothesis has two parts: changes are repetitive relative to their parent (they showed that changes are 43% graftable on average) and this repetitiveness is usefully exploitable (they found that the parent is by far the most fecund donor and grafts are often contiguous)
-
----
-
 Prompt engineering has been extensively used as a way to improve code generation
 
 Prompt engineering is the iterative process of developing a prompt by modifying or changing the prompt engineering technique, which is a strategy for iterating on a prompt to improve it
@@ -485,6 +475,16 @@ Once a bug is found, the programmer is typically responsible to fix it. Automate
 
 As LLMs are prone to hallucinate, LLM-driven automated program repair is no exception. Scalability is also a main concern when automated repair relies on generate-and-test ([build effort problem](https://dl.acm.org/doi/10.1145/3524459.3527353))
 
+---
+
+Automated program repair is based on the assumption that program source code changes that occur during development can often be constructed from grafts
+
+> Changes to a codebase contain snippets that already exist in the codebase at the time of the change, and these snippets can be efficiently found and exploited (the plastic surgery hypothesis)
+> 
+> -- [Barr, E. et al.](https://dl.acm.org/doi/10.1145/2635868.2635898)
+
+The plastic surgery hypothesis has two parts: changes are repetitive relative to their parent (they showed that changes are 43% graftable on average) and this repetitiveness is usefully exploitable (they found that the parent is by far the most fecund donor and grafts are often contiguous)
+
 #### 2.4.2. Performance improvement
 
 In the 1970s, the strongest concern was about correctness. Software transformation consisted solely of steps that were correct by construction
@@ -511,6 +511,7 @@ Up to a third of software engineering effort is spent on largely repetitive, ted
 | Bias                                       | A numerical value that shifts the weighted sum of inputs before this sum is fed into the activation function                                                                                                                                                                                           |
 | Build effort problem                       | A problem for genetic improvement that occurs when there are many candidates to be evaluated to find an improved version, thereby rendering the technique inapplicable when the build effort is too large                                                                                              |
 | Code refactoring                           | The process of restructuring existing source code without changing its external behavior. Refactoring is intended to improve the design, structure, and/or implementation of the software (its non-functional attributes), while preserving its functionality                                          |
+| Coincidental correctness                   | A test executes faulty statements yet still produce the expected outputs                                                                                                                                                                                                                               |
 | Context inconsistency                      | A type of faithfulness hallucination that occurs when the generated context contradicts the user's provided contextual information                                                                                                                                                                     |
 | Debugging                                  | The process of finding the root cause, workarounds, and possible fixes for bugs                                                                                                                                                                                                                        |
 | Document summarization                     | The task of producing a shorter version of a document while preserving its information content                                                                                                                                                                                                         |
