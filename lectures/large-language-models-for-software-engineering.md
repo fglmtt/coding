@@ -153,7 +153,7 @@ As a rule of thumb, pre-training gathers knowledge, while fine-tuning shapes tha
 
 ### 1.4. What could possibly go wrong
 
-LLMs do not truly understand anything. Since LLMs are very good at figuring out which world statistically follows another, the answers they give often **sound** authoritative. However, LLMs hallucinate quite often (see [§1.4.1](#141-hallucinations))
+LLMs do not truly understand anything. Since LLMs are very good at figuring out which word statistically follows another, the answers they give often **sound** authoritative. However, LLMs hallucinate quite often (see [§1.4.1](#141-hallucinations))
 
 Determinism often shows up in day-to-day programming
 
@@ -162,7 +162,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-However, LLMs are probabilistic. In other words, same inputs may produce different outputs. This phenomenon is called non-determinism (see [§1.4.2](#142-non-determinisms))
+However, LLMs are probabilistic. In other words, same inputs may produce different outputs. This phenomenon is called non-determinism (see [§1.4.2](#142-determinism-v-non-determinism))
 
 #### 1.4.1. Hallucinations
 
@@ -187,8 +187,8 @@ mindmap
                 Entity-error hallucinations
             Factual fabrications
                 Unverifiability hallucinations
-                Overclain hallucinations
-        Faithfullness hallucinations
+                Overclaim hallucinations
+        Faithfulness hallucinations
             Instruction inconsistencies
             Context inconsistencies
             Logical inconsistencies
@@ -284,7 +284,7 @@ There are many reasons determinism is valuable
 
 However, there are cases where we do not really care about determinism. Consider the serverless model. This model has many acceptable behaviors in response to a given input. In other words, it is irrelevant to correctness in what order and where these server functions are executed
 
-And also we don't always want engineered systems to be boring. Non-deterministic models fit for purpose here, as they are by definition unpredictable. For example, any AI attempting to exhibit human-like behavior needs to be surprising, and, therefore, at least appear to be non-deterministic
+And also we don't always want engineered systems to be boring. Non-deterministic models are fit for purpose here, as they are by definition unpredictable. For example, any AI attempting to exhibit human-like behavior needs to be surprising, and, therefore, at least appear to be non-deterministic
 
 LLMs are non-deterministic, so forget about repeatability, predictability, fault detection, simplicity, unsurprising behavior, and composability
 
@@ -329,7 +329,7 @@ Whether requirements engineering is a branch of software engineering or systems 
 
 ---
 
-Only a few works explored LLMs for requirements engineering. However
+Only a few works have explored LLMs for requirements engineering. However
 - Requirements engineering has a long tradition of thinking about and coming up with methods to describe stakeholder needs precisely
 - LLMs have natural language processing capabilities
 
@@ -337,7 +337,7 @@ Only a few works explored LLMs for requirements engineering. However
 > 
 > -- [Gotel, O. and Finkelstein, A.](https://ieeexplore.ieee.org/document/292398)
 
-Identifying traceability links between requirements and other engineering artefacts, such as code and tests, are especially challenging because written in natural language—a natural fit for LLMs
+Identifying traceability links between requirements and other engineering artefacts, such as code and tests, is especially challenging because written in natural language—a natural fit for LLMs
 
 ### 2.2. Software development 
 
@@ -345,7 +345,7 @@ Identifying traceability links between requirements and other engineering artefa
 
 Code completion is the area of software engineering where LLMs have been most thoroughly explored so far
 
-To some extent, code completion sidesteps hallucination problems by acting as a recommender systems to the developer, who is ultimately responsible to weed out hallucinations before integrating the generated content into the code base. Many software engineers already appear to decided that the benefits outweigh any necessary human filtration effort
+To some extent, code completion sidesteps hallucination problems by acting as a recommender system to the developer, who is ultimately responsible to weed out hallucinations before integrating the generated content into the code base. Many software engineers already appear to have decided that the benefits outweigh any necessary human filtration effort
 
 There are expectations that programmers will spend more time reviewing rather than writing code
 
@@ -403,6 +403,12 @@ timeline
         : Make sure tests align with plan and requirements
     Test preparation
         : Implement tests
+```
+
+---
+
+```mermaid
+timeline
     Test execution
         : Execute tests
         : Record the results
@@ -453,7 +459,7 @@ pie showData
 
 ---
 
-As code generation is generally driven by what is most likely rather than what is most correct, hallucinations threat correctness
+As code generation is generally driven by what is most likely rather than what is most correct, hallucinations threaten correctness
 
 > A test oracle is a procedure that distinguishes between the correct and incorrect behaviors of the system under test
 > 
@@ -463,7 +469,7 @@ The lack of a test oracle is particularly relevant when generating brand-new sof
 
 ---
 
-The oracle problems also plays a role in test generation. A new test either passes or fails on the current release
+The oracle problem also plays a role in test generation. A new test either passes or fails on the current release
 
 Suppose the test passes. We might assume that the functionality is correctly tested and the generated test thus can be used as a regression test against which future changes can be checked. However, a test that passes may merely reflect coincidental correctness or, worse, capture and thereby enforce an incorrect behavior
 
@@ -485,7 +491,7 @@ In the 1970s, the strongest concern was about correctness. Software transformati
 
 In the 2010s, the tight semantic straitjacket of the 1970s was already considerably relaxed to allow transformations that might even fail some tests. The strongest concern became to retain sufficient operational faithfulness. The rationale was that no software can be considered functionally correct when executed on a system in which inefficiency has left insufficient remaining resources
 
-Todays, software generated by LLMs may not even be syntactically correct, let alone semantically. Testing is even more important to assure functional faithfulness and check for regressions in those non-functional properties that are not targeted by the improvement process
+Today, software generated by LLMs may not even be syntactically correct, let alone semantically. Testing is even more important to assure functional faithfulness and check for regressions in those non-functional properties that are not targeted by the improvement process
 
 #### 2.4.3. Refactoring
 
@@ -497,55 +503,58 @@ Up to a third of software engineering effort is spent on largely repetitive, ted
 
 ## Glossary
 
-| Term                               | Meaning                                                                                                                                                                                                                                                                                                |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Abstractive summarizer             | An abstractive summarizer is a type of NLP system that performs document summarization                                                                                                                                                                                                                 |
-| Artificial intelligence (AI)       | The capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making                                                                                                                   |
-| Automated program repair           | The automatic repair of software bugs without the intervention of a human programmer                                                                                                                                                                                                                   |
-| Bias                               | A numerical value that shifts the weighted sum of inputs before this sum is fed into the activation function                                                                                                                                                                                           |
-| Build effort problem               | A problem for genetic improvement that occurs when there are many candidates to be evaluated to find an improved version, thereby rendering the technique inapplicable when the build effort is too large                                                                                              |
-| Code refactoring                   | The process of restructuring existing source code without changing its external behavior. Refactoring is intended to improve the design, structure, and/or implementation of the software (its non-functional attributes), while preserving its functionality                                          |
-| Context inconsistency              | A type of faithfulness hallucination that occurs when the generated context contradicts the user's provided contextual information                                                                                                                                                                     |
-| Debugging                          | The process of finding the root cause, workarounds, and possible fixes for bugs                                                                                                                                                                                                                        |
-| Document summarization             | The task of producing a shorter version of a document while preserving its information content                                                                                                                                                                                                         |
-| Entity-error hallucination         | A type of factual contradiction that occurs when the generated content contains wrong entities                                                                                                                                                                                                         |
-| Factual contradiction              | A type of factuality hallucination that occurs when the generated content contains facts that can be grounded in real-world information but present contradictions                                                                                                                                     |
-| Factual fabrication                | A type of factuality hallucination that occurs when the generated content contains facts that are unverifiable against established real-world knowledge                                                                                                                                                |
-| Factuality hallucination           | A type of hallucination affecting LLMs. This hallucination occurs when there is a discrepancy between the generated content and verifiable real-world facts                                                                                                                                            |
-| Faithfulness hallucination         | A type of hallucination affecting LLMs. This hallucination occurs either when the generated content diverges from user input or when there is a lack of self-consistency in the generated content                                                                                                      |
-| Fine-tuning                        | A process by which a model, trained on a large dataset or a related task, is further trained on a smaller or more specific dataset to improve its performance on the target task or domain                                                                                                             |
-| Functional requirement             | A statement that specifies what a system must do                                                                                                                                                                                                                                                       |
-| Generative AI (GenAI)              | A category of AI that focuses on creating new content, such as text, images, audio, and video, based on patterns and data it has been trained on                                                                                                                                                       |
-| Graft                              | A snippet of code located elsewhere in the same program                                                                                                                                                                                                                                                |
-| Hallucination (for NLP)            | A phenomenon in which the generated content appears nonsensical or unfaithful to the provided source content                                                                                                                                                                                           |
-| Hallucination (general definition) | The perception of an entity or an event that is absent in reality                                                                                                                                                                                                                                      |
-| Information filtering system       | A system that removes redundant or unwanted information from an information stream using (semi)automated or computerized methods prior to presentation to a human user                                                                                                                                 |
-| Instruction inconsistency          | A type of faithfulness hallucination that occurs when the generated content deviates from the user's directives                                                                                                                                                                                        |
-| Large language model (LLM)         | An AI model that has been trained on large amounts of data and is able to generate text in a human-like fashion                                                                                                                                                                                        |
-| Logical inconsistency              | A type of faithfulness hallucination that occurs when the generated content has internal logic contradictions                                                                                                                                                                                          |
-| Natural language processing (NLP)  | A subfield of AI primarily concerned with providing computers with the ability to process data encoded in natural language                                                                                                                                                                             |
-| Non-determinism                    | An LLM may generate different content for the same prompt                                                                                                                                                                                                                                              |
-| Non-functional requirement         | A statement that sets constraints on how the system should operate                                                                                                                                                                                                                                     |
-| Overclaim hallucination            | A type of factual fabrication that occurs when the generated content contains claims that lack universal validity due to subjective biases                                                                                                                                                             |
-| Parameter                          | A numerical value inside an LLM that is adjusted during training. Parameters primarily include weights and biases. The number of parameters is often used as a measure of the size of an LLM                                                                                                           |
-| Performance improvement            | The act of transforming existing software into equivalent software that improves performance while retaining functional behavior                                                                                                                                                                       |
-| Plastic surgery                    | The act of grafting existing code to construct changes                                                                                                                                                                                                                                                 |
-| Prompt                             | The input provided to the LLM to stimulate the generation of a response                                                                                                                                                                                                                                |
-| Prompt engineering                 | The iterative process of developing a prompt by modifying or changing the prompt engineering technique                                                                                                                                                                                                 |
-| Prompt engineering techniques      | A strategy for iterating on a prompt to improve it                                                                                                                                                                                                                                                     |
-| Recommender system                 | A subclass of information filtering system that provides suggestions for items that are most pertinent to a particular user                                                                                                                                                                            |
-| Regression testing                 | The act of finding software regression after a code change has occurred                                                                                                                                                                                                                                |
-| Relation-error hallucination       | A type of factual contradiction that occurs when the generated content contains wrong relations between entities                                                                                                                                                                                       |
-| Requirements engineering           | The process of discovering the purpose for which a software system was intended, by identifying stakeholders and their needs, and documenting these in a form that is amenable to analysis, communication, and subsequent implementation                                                               |
-| Requirements traceability          | The ability to describe and follow the life of a requirement, in both a forwards and backwards direction (i.e., from its origins, through its development and specification, to its subsequent deployment and use, and through all periods of ongoing refinement and iteration in any of these phases) |
-| Software engineering               | A branch of both computer science and engineering focused on designing, developing, testing, and maintaining software applications                                                                                                                                                                     |
-| Software regression                | A type of software bug where a feature that has worked before stops working                                                                                                                                                                                                                            |
-| Software testing                   | The act of checking whether software satisfies expectations                                                                                                                                                                                                                                            |
-| System engineering                 | An interdisciplinary field of engineering and engineering management that focuses on how to design, integrate, and manage complex systems over their life cycles                                                                                                                                       |
-| Test oracle                        | A procedure that distinguishes between the correct and incorrect behaviors of the system under test                                                                                                                                                                                                    |
-| Token                              | The atomic unit with which an LLM represents its input and output. Tokens are enumerations. Tokens can represent words, characters, subwords, or other segments of the text and/or code                                                                                                                |
-| Unverifiability hallucination      | A type of factual fabrication that occurs when the generated content contains statements that cannot be verified using available sources                                                                                                                                                               |
-| Weight                             | A numerical value that dictates the strength of connections between neurons and serves as coefficient to the input values or activation thresholds for preceding neurons                                                                                                                               |
+| Term                                       | Meaning                                                                                                                                                                                                                                                                                                |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Abstractive summarizer                     | An abstractive summarizer is a type of NLP system that performs document summarization                                                                                                                                                                                                                 |
+| Artificial intelligence (AI)               | The capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making                                                                                                                   |
+| Automated program repair                   | The automatic repair of software bugs without the intervention of a human programmer                                                                                                                                                                                                                   |
+| Bias                                       | A numerical value that shifts the weighted sum of inputs before this sum is fed into the activation function                                                                                                                                                                                           |
+| Build effort problem                       | A problem for genetic improvement that occurs when there are many candidates to be evaluated to find an improved version, thereby rendering the technique inapplicable when the build effort is too large                                                                                              |
+| Code refactoring                           | The process of restructuring existing source code without changing its external behavior. Refactoring is intended to improve the design, structure, and/or implementation of the software (its non-functional attributes), while preserving its functionality                                          |
+| Context inconsistency                      | A type of faithfulness hallucination that occurs when the generated context contradicts the user's provided contextual information                                                                                                                                                                     |
+| Debugging                                  | The process of finding the root cause, workarounds, and possible fixes for bugs                                                                                                                                                                                                                        |
+| Document summarization                     | The task of producing a shorter version of a document while preserving its information content                                                                                                                                                                                                         |
+| Entity-error hallucination                 | A type of factual contradiction that occurs when the generated content contains wrong entities                                                                                                                                                                                                         |
+| Factual contradiction                      | A type of factuality hallucination that occurs when the generated content contains facts that can be grounded in real-world information but present contradictions                                                                                                                                     |
+| Factual fabrication                        | A type of factuality hallucination that occurs when the generated content contains facts that are unverifiable against established real-world knowledge                                                                                                                                                |
+| Factuality hallucination                   | A type of hallucination affecting LLMs. This hallucination occurs when there is a discrepancy between the generated content and verifiable real-world facts                                                                                                                                            |
+| Faithfulness hallucination                 | A type of hallucination affecting LLMs. This hallucination occurs either when the generated content diverges from user input or when there is a lack of self-consistency in the generated content                                                                                                      |
+| Fine-tuning                                | A process by which a model, trained on a large dataset or a related task, is further trained on a smaller or more specific dataset to improve its performance on the target task or domain                                                                                                             |
+| Functional requirement                     | A statement that specifies what a system must do                                                                                                                                                                                                                                                       |
+| Generative AI (GenAI)                      | A category of AI that focuses on creating new content, such as text, images, audio, and video, based on patterns and data it has been trained on                                                                                                                                                       |
+| Graft                                      | A snippet of code located elsewhere in the same program                                                                                                                                                                                                                                                |
+| Hallucination (for NLP)                    | A phenomenon in which the generated content appears nonsensical or unfaithful to the provided source content                                                                                                                                                                                           |
+| Hallucination (general definition)         | The perception of an entity or an event that is absent in reality                                                                                                                                                                                                                                      |
+| Information filtering system               | A system that removes redundant or unwanted information from an information stream using (semi)automated or computerized methods prior to presentation to a human user                                                                                                                                 |
+| Instruction inconsistency                  | A type of faithfulness hallucination that occurs when the generated content deviates from the user's directives                                                                                                                                                                                        |
+| Large language model (LLM)                 | An AI model that has been trained on large amounts of data and is able to generate text in a human-like fashion                                                                                                                                                                                        |
+| Logical inconsistency                      | A type of faithfulness hallucination that occurs when the generated content has internal logic contradictions                                                                                                                                                                                          |
+| Natural language processing (NLP)          | A subfield of AI primarily concerned with providing computers with the ability to process data encoded in natural language                                                                                                                                                                             |
+| Non-determinism                            | An LLM may generate different content for the same prompt                                                                                                                                                                                                                                              |
+| Non-functional requirement                 | A statement that sets constraints on how the system should operate                                                                                                                                                                                                                                     |
+| Overclaim hallucination                    | A type of factual fabrication that occurs when the generated content contains claims that lack universal validity due to subjective biases                                                                                                                                                             |
+| Parameter                                  | A numerical value inside an LLM that is adjusted during training. Parameters primarily include weights and biases. The number of parameters is often used as a measure of the size of an LLM                                                                                                           |
+| Performance improvement                    | The act of transforming existing software into equivalent software that improves performance while retaining functional behavior                                                                                                                                                                       |
+| Plastic surgery                            | The act of grafting existing code to construct changes                                                                                                                                                                                                                                                 |
+| Prompt                                     | The input provided to the LLM to stimulate the generation of a response                                                                                                                                                                                                                                |
+| Prompt engineering                         | The iterative process of developing a prompt by modifying or changing the prompt engineering technique                                                                                                                                                                                                 |
+| Prompt engineering techniques              | A strategy for iterating on a prompt to improve it                                                                                                                                                                                                                                                     |
+| Recommender system                         | A subclass of information filtering system that provides suggestions for items that are most pertinent to a particular user                                                                                                                                                                            |
+| Regression testing                         | The act of finding software regression after a code change has occurred                                                                                                                                                                                                                                |
+| Relation-error hallucination               | A type of factual contradiction that occurs when the generated content contains wrong relations between entities                                                                                                                                                                                       |
+| Requirements engineering                   | The process of discovering the purpose for which a software system was intended, by identifying stakeholders and their needs, and documenting these in a form that is amenable to analysis, communication, and subsequent implementation                                                               |
+| Requirements traceability                  | The ability to describe and follow the life of a requirement, in both a forwards and backwards direction (i.e., from its origins, through its development and specification, to its subsequent deployment and use, and through all periods of ongoing refinement and iteration in any of these phases) |
+| Scaling hypothesis                         | A hypothesis that claims that an AI model's cognitive ability scales with increased compute                                                                                                                                                                                                            |
+| Scaling hypothesis (strong interpretation) | As error rates decrease, new cognitive abilities unexpectedly emerge                                                                                                                                                                                                                                   |
+| Scaling hypothesis (weak interpretation)   | The model error rates decrease as a power law function of compute                                                                                                                                                                                                                                      |
+| Software engineering                       | A branch of both computer science and engineering focused on designing, developing, testing, and maintaining software applications                                                                                                                                                                     |
+| Software regression                        | A type of software bug where a feature that has worked before stops working                                                                                                                                                                                                                            |
+| Software testing                           | The act of checking whether software satisfies expectations                                                                                                                                                                                                                                            |
+| System engineering                         | An interdisciplinary field of engineering and engineering management that focuses on how to design, integrate, and manage complex systems over their life cycles                                                                                                                                       |
+| Test oracle                                | A procedure that distinguishes between the correct and incorrect behaviors of the system under test                                                                                                                                                                                                    |
+| Token                                      | The atomic unit with which an LLM represents its input and output. Tokens are enumerations. Tokens can represent words, characters, subwords, or other segments of the text and/or code                                                                                                                |
+| Unverifiability hallucination              | A type of factual fabrication that occurs when the generated content contains statements that cannot be verified using available sources                                                                                                                                                               |
+| Weight                                     | A numerical value that dictates the strength of connections between neurons and serves as coefficient to the input values or activation thresholds for preceding neurons                                                                                                                               |
 
 ## Bibliography
 
