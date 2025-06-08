@@ -196,62 +196,57 @@ mindmap
 
 ##### 1.4.1.1. Factual contradictions
 
-> [!note] Prompt
+> [!question] Prompt
 > What are Thomas Edison’s main contributions to science and technology?
 
-```
+> [!note] Output
 Thomas Edison developed the first practical telephone and invented the light bulb
-```
 
 > [!bug] Explanation
 > Edison improved the light bulb (relation-error hallucination), building on earlier designs by others, and Alexander Graham Bell invented the telephone (entity-error hallucination)
 
 ##### 1.4.1.2. Factual fabrications
 
-> [!note] Prompt
+> [!question] Prompt
 > What are the major environmental impacts of the construction of the Eiffel Tower?
 
-```
-The construction of the Eiffel Tower in 1889 led to the extinction of the Parisian tiger, a species that played a crucial role in the region’s ecosystem. Additionally, it is widely recognized as the event that sparked the global green architecture movement
-```
+> [!note] Output
+> The construction of the Eiffel Tower in 1889 led to the extinction of the Parisian tiger, a species that played a crucial role in the region’s ecosystem. Additionally, it is widely recognized as the event that sparked the global green architecture movement
 
 > [!bug] Explanation
 > There is no evidence of a “Parisian tiger” ever existing (unverifiability hallucination), and attributing the origins of green architecture to the Eiffel Tower is an exaggeration, as this movement has diverse roots and cannot be traced back to a single event (overclaim hallucination)
 
 ##### 1.4.1.3. Instruction inconsistencies
 
-> [!note] Prompt
+> [!question] Prompt
 > Translate the English question into Spanish: “What is the capital of France?”
 
-```
-The capital of France is Paris
-```
+> [!note] Output
+> The capital of France is Paris
 
 > [!bug] Explanation
 > Paris is the capital of France, but the request was to translate the question not to answer it
 
 ##### 1.4.1.4. Context inconsistencies
 
-> [!note] Prompt
+> [!question] Prompt
 > Summarize what follows: The Nile is a major north-flowing river in northeastern Africa. It’s traditionally considered the longest river in the world. Originating in the Great Lakes region of central Africa, it flows through several countries before emptying into the Mediterranean Sea
 > 
 
-```
-The Nile originates from the mountain ranges of central Africa and flows into the Mediterranean
-```
+> [!note] Output
+> The Nile originates from the mountain ranges of central Africa and flows into the Mediterranean
 
 > [!bug] Explanation
 > The summary incorrectly states that the Nile originates from the “mountain ranges of central Africa”, while the paragraph mentions that the Nile originates in the Great Lakes region of central Africa
 ##### 1.4.1.5. Logical inconsistencies
 
-> [!note] Prompt
+> [!question] Prompt
 > Solve the equation $2x + 3 = 11$ step by step
 
-```
-Step 1: Subtract 3 from both sides to get: 2x = 8. 
-Step 2: Divide both sides by 2 to get: x = 3. 
-So the result of the equation is x = 3
-```
+> [!note] Output
+> Step 1: Subtract 3 from both sides to get: 2x = 8. 
+> Step 2: Divide both sides by 2 to get: x = 3. 
+> So the result of the equation is x = 3
 
 > [!bug] Explanation
 > The first step correctly isolates the term with $x$ to get $2x = 8$. However, the next step inaccurately divides 8 by 2 to yield a result of $x = 3$, which is inconsistent with the earlier reasoning
