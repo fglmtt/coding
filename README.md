@@ -34,5 +34,5 @@ mattia.fogli@unife.it
 | --- | ------------------------------------------------------------------------------------------------------------ |
 | 0   | [Python](https://github.com/fglmtt/admin)                                                                    |
 | 1   | [Large language models for software engineering](lectures/large-language-models-for-software-engineering.md) |
-| 2   | Prompt engineering                                                                                           |
+| 2   | [Prompt engineering](lectures/prompt-engineering.md)                                                         |
 | 3   | Copilot                                                                                                      |
