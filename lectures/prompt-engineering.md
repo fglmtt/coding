@@ -88,7 +88,7 @@ Style instructions are a type of output formatting used to modify the output sty
 A role, aka a person, is a frequently discussed component that can improve writing and style text
 
 > [!question] Prompt
-> I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. My first command is pwd
+> I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. My first command is pwd
 
 https://github.com/f/awesome-chatgpt-prompts
 
@@ -142,7 +142,6 @@ Few-shot prompting is a prompting technique to generate more desired outputs aft
 | Exemplar label quality      | The necessity of high quality examples is unclear, as some work suggests that providing models with incorrect labels of exemplars may not hurt performance ([Min, S. et al.](https://arxiv.org/abs/2202.12837)) | Ensure examples are labeled correctly        |
 | Exemplar format             | The formatting of examples affects performance. The optimal format may vary across tasks                                                                                                                        | Choose a common format                       |
 | Exemplar similarity         | Examples that look like the target question work most of the time, but sometimes a mix of diverse examples works even better                                                                                    | Select similar examples to the test instance |
-| Instruction selection       | Not clear the benefits of adding instructions, except that they can still guide auxiliary output attributes like writing style                                                                                  | n/a                                          |
 
 ### 3.3. Chain-of-thought prompting
 
