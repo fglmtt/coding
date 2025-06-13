@@ -214,7 +214,7 @@ stateDiagram
 ---
 
 > [!question] Prompt (few-shot)
-> `str_post`: Find characters at given positions
+> `str_pos`: Find characters at given positions
 > Q: What is the first letter of `["E", "l", "o", "n"]`? A: `["E"]`
 > Q: What are the second letters of `["Elon", "Musk", "Tesla"]`? A: `["l", "u", "e"]`
 > Q: What is the third letter of `["Mattia"]`?
@@ -239,7 +239,7 @@ stateDiagram
 > [!question] Prompt (decomposed)
 > QC: Concatenate the first letter of every word in `"Jack Ryan"` using spaces 
 > Q1: `split` What are the words in `"Jack Ryan"`? A1
-> Q2: (`foreach`) `str_post` What is the first letter of A1? A2
+> Q2: (`foreach`) `str_pos` What is the first letter of A1? A2
 > Q3: `merge` Concatenate A2 with spaces
 
 > [!note] Output
@@ -254,8 +254,7 @@ stateDiagram
 
 Self-consistency prompting is a prompting technique that sends the same prompt multiple times to solve the same problem and takes the majority result as the final answer
 
-This technique is analogous to the human experience that if multiple different ways of thinking lead to the same answer, one has greater
-confidence that the final answer is correct
+This technique is analogous to the human experience that if multiple different ways of thinking lead to the same answer, one has greater confidence that the final answer is correct
 
 Self-consistency leverages the intuition that complex reasoning tasks typically admit multiple reasoning paths that reach a correct answer. As a rule of thumb, the more that deliberate thinking and analysis is required for a problem, the greater the diversity of reasoning paths that can recover the answer
 
@@ -287,7 +286,7 @@ Chain-of-verification prompting is a prompting technique that given a baseline r
 | #   | Step                             | What to do                                                                                                       |
 | --- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | 1   | Generate baseline response       | Prompt the model                                                                                                 |
-| 2   | Plan verifications               | Generate a list of verification<br>questions to verify if there are any mistakes in the baseline response        |
+| 2   | Plan verifications               | Generate a list of verification questions to verify if there are any mistakes in the baseline response           |
 | 3   | Execute verifications            | Answer each verification question in turn, and hence check the answer against the baseline response for mistakes |
 | 4   | Generate final verified response | Given the mistakes (if any), generate a revised response incorporating the verification results                  |
 
@@ -299,7 +298,7 @@ Chain-of-verification prompting is a prompting technique that given a baseline r
 > Name some politicians who were born in NY, New York
 
 > [!note] Output (baseline response)
-> Here are a few notable American politicians born in New York City: Donald Trump, Theodore Roosevelt, Hillary Clinton, Bernie Sanders, and Rudolph “Rudy” Giuliani.
+> Here are a few notable American politicians born in New York City: Donald Trump, Theodore Roosevelt, Hillary Clinton, Bernie Sanders, and Rudolph “Rudy” Giuliani
 
 ---
 
@@ -340,7 +339,7 @@ Prompt engineering is the iterative process of developing a prompt by modifying 
  
 A prompt engineering technique is a strategy for iterating on a prompt to improve it
 
-Using a software engineering analogy, a prompting technique is the design pattern that lays out how to structure a prompt (or chain of prompts), while a prompt-engineering technique is the debug-and-tune cycle that keeps tweaking that prompt—like refactoring and profiling—until it performs its best
+Using a software engineering analogy, a prompting technique is the design pattern that lays out how to structure a prompt (or chain of prompts), while a prompt engineering technique is the debug-and-tune cycle that keeps tweaking that prompt—like refactoring and profiling—until it performs its best
 
 ### 4.1. Meta prompting
 
@@ -454,7 +453,7 @@ Lower `top_p` values make the model generate more deterministic responses
 
 ---
 
-Suppose `top_p` is equal to 0.9. The model sorts all possible tokens by their predicted probability (from highest to lowest) and starts summing their probabilities until the cumulative total reaches or exceeds the threshold (0.9). Only this subset of tokens is retained; the rest are discarded. 
+Suppose `top_p` is equal to 0.9. The model sorts all possible tokens by their predicted probability (from highest to lowest) and starts summing their probabilities until the cumulative total reaches or exceeds the threshold (0.9). Only this subset of tokens is retained; the rest are discarded
 
 For example
 - `blue` $\rightarrow$ 0.7
@@ -462,18 +461,18 @@ For example
 - `green` $\rightarrow$ 0.05
 - all the other tokens with smaller probabilities
 
-The model then samples only from the retained set: {"blue", "clear"}
+The model then samples only from the retained set: {`blue`, `clear`}
 
 ### 6.3. Zeroing temperature and top-p
 
 `temperature = 0` and `top_p = 0` do not ensure determinism. There are plenty of factors that can still make the model roll the dice
 
-| Factor                 | Meaning                                                                                                                                  |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Ties happen            | Sometimes two tokens are exactly equally likely                                                                                          |
-| Math is done in floats | Probabilities are stored in tiny floating-point numbers. Round-off errors can bump one token a hair above another on different GPUs/CPUs |
-| Software updates       | Even a minor library upgrade can reorder the internal token list or change rounding rules                                                |
-| Hidden layers          | There are several invisible extra steps between when the model receives the prompt and the user gets the output                          |
+| Factor                 | Meaning                                                                                                                             |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Ties happen            | Sometimes two tokens are exactly equally likely                                                                                     |
+| Math is done in floats | Probabilities are stored in floating-point numbers. Round-off errors can bump one token a hair above another on different GPUs/CPUs |
+| Software updates       | Even a minor library upgrade can reorder the internal token list or change rounding rules                                           |
+| Hidden layers          | There are several invisible extra steps between when the model receives the prompt and the user gets the output                     |
 
 ### 6.4. Seed and system fingerprint
 
