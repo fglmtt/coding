@@ -1,8 +1,9 @@
 import argparse
 import json
+import os
 import openai
 
-CREDENTIALS = "credentials.json"
+CREDENTIALS = os.path.join(os.path.dirname(__file__), "credentials.json")
 
 
 def load_credentials():
@@ -17,7 +18,6 @@ def load_credentials():
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="OpenAI API Query Client")
-    parser.add_argument("--prompt", type=str, required=True, help="prompt")
     parser.add_argument(
         "--temperature", type=float, default=1.0, help="temperature parameter"
     )
@@ -30,14 +30,26 @@ def main():
     args = parse_arguments()
 
     client = openai.OpenAI(api_key=credentials["api_key"])
-    print("prompt:", args.prompt)
-    response = client.responses.create(
-        model="gpt-4o",
-        input=args.prompt,
-        temperature=args.temperature,
-        top_p=args.top_p,
-    )
-    print("output:", response.output_text)
+    while True:
+        try:
+            prompt = input("enter prompt: ")
+        except (EOFError, KeyboardInterrupt):
+            print("\nexiting...")
+            break
+        if not prompt.strip():
+            continue
+        try:
+            response = client.responses.create(
+                model="gpt-4o",
+                input=prompt,
+                temperature=args.temperature,
+                top_p=args.top_p,
+            )
+            print("output:", response.output_text)
+        except openai.OpenAIError as e:
+            print(f"API error: {e}")
+        except Exception as e:
+            print(f"unexpected error occurred: {e}")
 
 
 if __name__ == "__main__":
