@@ -106,7 +106,7 @@ It is often necessary to include additional information in a prompt. This additi
 
 A prompting technique is a blueprint that describes how to structure a prompt, prompts, or dynamic sequencing of multiple prompts. A prompting technique may incorporate conditional logic, parallelism, or other architectural considerations spanning multiple prompts
 
-Think of a prompting technique as the design pattern
+Think of a prompting technique as a design pattern
 
 Examples of prompting techniques are zero-shot prompting ([§3.1](#31-zero-shot-prompting)), few-shot prompting ([§3.2](#32-few-shot-prompting)), chain-of-thought prompting ([§3.3](#33-chain-of-thought-prompting)), decomposed prompting ([§3.4](#34-decomposed-prompting)), self-consistency prompting ([§3.5](#35-self-consistency-prompting)), and chain-of-verification prompting ([§3.6](#36-chain-of-verification-prompting))
 
@@ -352,8 +352,7 @@ This is often done without any scoring mechanism, using just a simple template
 
 ---
 
-A meta prompt is an example-agnostic structured prompt designed
-to capture the reasoning structure of a specific category of tasks. It provides a scaffold that outlines the general approach to a problem, thereby enabling LLMs to fill in task-specific details as needed
+A meta prompt is an example-agnostic structured prompt designed to capture the reasoning structure of a specific category of tasks. It provides a scaffold that outlines the general approach to a problem, thereby enabling LLMs to fill in task-specific details as needed
 
 A meta prompt focuses on the procedural aspects of problem-solving—the how—rather than the content-specific details—the what
 
