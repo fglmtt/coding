@@ -271,7 +271,7 @@ As a rule of thumb, the more contextually rich the prompt is, the better the out
 ---
 
 > [!tip] Tip 10: Highlight relevant code
-> Highlighting relevant code before prompting helps Copilot provide more targeted suggestions 
+> Highlighting relevant code before prompting helps Copilot provide more targeted suggestions
 
 > [!tip] Tip 11: Organize conversations in threads
 > You can have multiple ongoing conversations, each in a different thread (press the `+` button in the top-right corner of the chat)
@@ -298,7 +298,7 @@ Satisfied developers are more productive and write better code. Good workdays in
 1. What is a good day for a software developer?
 2. What is a typical workday?
 
-They collected 5,971 responses from professional developers, who reflected on these questions and self-reported how they spent their time on various activities at work
+They collected 5,971 responses from professional developers who reflected on these questions and self-reported how they spent their time on various activities at work
 
 ---
 
@@ -318,7 +318,7 @@ pie showData
 
 ---
 
-Development activities require developers to focus for long chunks of time without interruptions. The longest period developers could work on code without an interruption was 47.3 minutes, on average
+Development activities require developers to focus for long chunks of time without interruptions. The longest period developers could work on code without an interruption was 47.3 minutes on average
 
 ```mermaid
 pie showData
@@ -400,7 +400,7 @@ timeline
 ---
 
 > [!example] *Slater v. Wikimedia* (United States, 2014)
-> **Claim**: Photographer David Slater claimed copyright over the “monkey selfie,” arguing he created the conditions for the photo—traveling to Indonesia, befriending macaques, and setting up the camera for them to use. Wikimedia Commons hosted the image, arguing it lacked a human author.
+> **Claim**: Photographer David Slater claimed copyright over the "monkey selfie," arguing he created the conditions for the photo—traveling to Indonesia, befriending macaques, and setting up the camera for them to use. Wikimedia Commons hosted the image, arguing it lacked a human author
 > 
 > **Verdict**: The U.S. Copyright Office stated that works without human authorship—such as photos taken by animals—are not eligible for copyright protection
 
@@ -411,7 +411,7 @@ timeline
 > 
 > **Verdict**: The court dismissed the case, holding that 
 > 1. PETA lacked standing to represent the monkey, and
-> 2. animals cannot hold copyright under U.S. law
+> 2. Animals cannot hold copyright under U.S. law
 
 ---
 
@@ -468,7 +468,7 @@ But why not copyright infringement?
 > 
 > **Verdict**: The court ruled in Google’s favor because
 > 1. While Google copied the whole of each book, this was necessary to achieve its transformative purpose of indexing book contents for analysis and search
-> 2. Because Google displayed only up to three short snippets from each book, those snippets were unlikely to undercut the books’ market
+> 2. Because Google displayed only up to three short snippets from each book, those snippets were unlikely to undercut the books' market
 
 ---
 
@@ -480,7 +480,7 @@ Because the court found both the scans and the snippets to be fair uses, GitHub 
 
 ### 4.3. Does Copilot retain user prompts?
 
-Copilot provides suggestions based on the context of what you’re working on in your code editor. This requires temporarily transferring an ephemeral copy of various elements of that context to GitHub’s servers
+Copilot provides suggestions based on the context of what you are working on in your code editor. This requires temporarily transferring an ephemeral copy of various elements of that context to GitHub's servers
 
 The transmitted data is encrypted, both in transit and at rest
 
@@ -490,7 +490,7 @@ Prompts are transmitted in real-time only to return suggestions. If you are usin
 
 Copilot does not copy and paste any code. Copilot may be trained on public code, but it does not contain any code. Copilot generates suggestions using probabilistic determination
 
-In rare instances (less than 1% based on GitHub’s research), suggestions from Copilot may match examples of code used for training
+In rare instances (less than 1% based on GitHub's research), suggestions from Copilot may match examples of code used for training
 
 If a code suggestion matches existing code, there is risk that using that suggestion could trigger claims of copyright infringement. In many ways, this is the same risk that arises when using any code that a developer does not originate, such as copying code from an online source, or reusing code from a library
 
@@ -500,7 +500,7 @@ Copilot does include an optional duplicate detection filter to detect and suppre
 
 If you use Copilot and turn on the code filtering feature, then GitHub will take responsibility—not you—for any copyright issues that arise from unmodified code suggestions Copilot provides
 
-Copilot also includes a code-referencing feature to assist users to find and review potentially relevant open source licenses. When a match is located, Copilot provides an alert that includes links to repositories for any such matching code, along with any available information on applicable software licenses
+Copilot also includes a code-referencing feature to assist users in finding and reviewing potentially relevant open source licenses. When a match is located, Copilot provides an alert that includes links to repositories for any such matching code, along with any available information on applicable software licenses
 
 ### 4.5. Who owns the suggestions provided by Copilot?
 
