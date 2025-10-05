@@ -71,8 +71,8 @@ mattia.fogli@unife.it
 
 ### Lectures
 
-| #   | Title                                                                                                        |
-| --- | ------------------------------------------------------------------------------------------------------------ |
-| 5   | [Large language models for software engineering](lectures/large-language-models-for-software-engineering.md) |
-| 6   | [Prompt engineering](lectures/prompt-engineering.md)                                                         |
-| 7   | [GitHub Copilot](lectures/github-copilot.md)                                                                 |
+| #   | Title                                                                      |
+| --- | -------------------------------------------------------------------------- |
+| 5   | [Large language models for software engineering](lectures/llms-for-swe.md) |
+| 6   | [Prompt engineering](lectures/prompt-engineering.md)                       |
+| 7   | [GitHub Copilot](lectures/github-copilot.md)                               |
