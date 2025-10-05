@@ -15,12 +15,12 @@ filippo.poltronieri@unife.it
 
 ### Timetable
 
-| Day          | Start | End   | Location                                |
-| ------------ | ----- | ----- | --------------------------------------- |
-| Sep 22, 2025 | 14:30 | 16:30 | INFO2 (PST)                             |
-| Sep 24, 2025 | 16:30 | 18:30 | Laboratorio di informatica grande (PST) |
-| Sep 29, 2025 | 14:00 | 16:00 | INFO2 (PST)                             |
-| Oct 01, 2025 | 16:30 | 18:30 | Laboratorio di informatica grande (PST) |
+| Day          | Start | End   | Location           |
+| ------------ | ----- | ----- | ------------------ |
+| Sep 22, 2025 | 14:30 | 16:30 | INFO1, INFO2 (PST) |
+| Sep 24, 2025 | 16:30 | 18:30 | INFO1, INFO2 (PST) |
+| Sep 29, 2025 | 14:00 | 16:00 | INFO1, INFO2 (PST) |
+| Oct 01, 2025 | 16:30 | 18:30 | INFO1, INFO2 (PST) |
 
 ### Where to find what
 
@@ -54,12 +54,12 @@ mattia.fogli@unife.it
 
 ### Timetable
 
-| Day          | Start | End   | Location                                |
-| ------------ | ----- | ----- | --------------------------------------- |
-| Oct 06, 2025 | 14:00 | 16:00 | INFO2 (PST)                             |
-| Oct 07, 2025 | 14:00 | 16:00 | Aula 05 (PST)                           |
-| Oct 13, 2025 | 14:00 | 16:00 | INFO2 (PST)                             |
-| Oct 15, 2025 | 16:30 | 18:30 | Laboratorio di informatica grande (PST) |
+| Day          | Start | End   | Location           |
+| ------------ | ----- | ----- | ------------------ |
+| Oct 06, 2025 | 14:00 | 16:00 | INFO1, INFO2 (PST) |
+| Oct 07, 2025 | 14:00 | 16:00 | Aula 05 (PST)      |
+| Oct 13, 2025 | 14:00 | 16:00 | INFO1, INFO2 (PST) |
+| Oct 15, 2025 | 16:30 | 18:30 | INFO1, INFO2 (PST) |
 
 ### Where to find what
 
