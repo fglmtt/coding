@@ -288,7 +288,7 @@ As a rule of thumb, the more contextually rich the prompt is, the better the out
 > If you want Copilot to complete a complex or large task, break the task into multiple simple, small tasks (see [decomposed prompting](prompt-engineering.md#34-decomposed-prompting))
 
 > [!tip] Tip 15: Be flexible
-> If you do not get the result you want, iterate on your prompt and try again (see [prompting](prompt-engineering#3-prompting-techniques) and [prompt engineering](prompt-engineering#4-prompt-engineering-techniques) techniques)
+> If you do not get the result you want, iterate on your prompt and try again (see [prompting](prompt-engineering.md#3-prompting-techniques) and [prompt engineering](prompt-engineering.md#4-prompt-engineering-techniques) techniques)
 
 ## 3. Today was a good day
 
@@ -553,3 +553,4 @@ GitHub does not claim ownership of a suggestion
 | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Code    | [MIT License](https://mit-license.org/)                                                                                       |
 | Text    | [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+
