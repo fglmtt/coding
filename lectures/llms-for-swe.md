@@ -374,7 +374,7 @@ After all, engineers regularly make the same judgement call for human-designed e
 
 #### 2.3.1. Software testing
 
-Software testing is the act of checking whether software satisfies expectations. Testing is iterative and may involve multiple cycles of the following stages, depending on the complexity of the system under test and testing requirements
+Software testing is the act of checking whether software satisfies expectations. Testing is iterative and may involve multiple cycles of the following stages, depending on the complexity of the system under test and testing requirements.
 
 ```mermaid
 timeline
