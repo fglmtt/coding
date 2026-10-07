@@ -29,10 +29,10 @@
 
 ### 1.1. Assignment
 
-1. [Set up the development environment](1-python-basic-stuff-pt1.md#16-development-environment)
-2. Try out the examples provided in the previous lectures
-	1. [Python: Basic stuff - Pt. 1](1-python-basic-stuff-pt1.md)
-	2. [Python: Basic stuff - Pt. 2](2-python-basic-stuff-pt2.md)
+1. [Set up the development environment](1-python-basic-stuff-pt1.md#16-development-environment).
+2. Try out the examples provided in the previous lectures.
+	1. [Python: Basic stuff - Pt. 1](1-python-basic-stuff-pt1.md).
+	2. [Python: Basic stuff - Pt. 2](2-python-basic-stuff-pt2.md).
 
 ### 1.2. Hints
 
@@ -42,7 +42,7 @@
 $ python <your_program>.py
 ```
 
-Depending on your system, you may have to use `python` or `python3`
+Depending on your system, you may have to use `python` or `python3`.
 
 #### 1.2.2. Enable the interactive mode
 
@@ -50,13 +50,13 @@ Depending on your system, you may have to use `python` or `python3`
 $ python
 ```
 
-Depending on your system, you may have to use `python` or `python3`
+Depending on your system, you may have to use `python` or `python3`.
 
 ## 2.  Spelling bee
 
 ### 2.1. Problem
 
-The New York Times publishes a daily puzzle called spelling bee. This game challenges readers to spell as many words as possible using only seven letters, where one of the letters is required. The words must have at least four letters.
+The New York Times publishes a daily puzzle called spelling bee. This game challenges readers to spell as many words as possible **using only seven letters**, where **one of the letters is required**. **The words must have at least four letters**.
 
 Suppose the letters are ACDLORT, with R as the required letter. So "color" is an acceptable word, but "told" is not, because it does not use R, and "rat" is not because it has only three letters. Letters can be repeated, so "ratatat" is acceptable.
 
@@ -89,7 +89,7 @@ def check_word(word, available, required):
 
 #### 2.1.2. Assignment 2
 
-According to the rules
+According to the rules:
 - Four-letter words are worth 1 point each.
 - Longer words earn 1 point per letter.
 - Each puzzle includes at least one “pangram” which uses every letter. These are worth 7 extra points!
@@ -219,10 +219,10 @@ Total score 388
 
 #### 2.2.1. Let it fail
 
-1. Create the `spelling_bee.py` file
-2. Copy and paste the `check_word` (see [§2.1.1](#211-assignment-1)) and `word_score` (see [§2.1.2](#212-assignment-2)) functions
-3. Make sure doctests run when `spelling_bee` is executed as a script
-4. Run `spelling_bee.py`
+1. Create the `spelling_bee.py` file.
+2. Copy and paste the `check_word` (see [§2.1.1](#211-assignment-1)) and `word_score` (see [§2.1.2](#212-assignment-2)) functions.
+3. Make sure doctests run when `spelling_bee` is executed as a script.
+4. Run `spelling_bee.py`.
 
 Expected output:
 
@@ -276,9 +276,9 @@ Got:
 
 #### 2.2.2. Problem decomposition
 
-Given that
-- `check_word` must check whether the required letters are used 
-- `score_word` must check whether all the available letters are used to set the appropriate score
+Given that:
+- `check_word` must check whether the required letters are used.
+- `score_word` must check whether all the available letters are used to set the appropriate score.
 
 Therefore, `check_word` and `score_word` requires the same logic. This logic can be encapsulated in another function, say, `uses_all`, which will be called by both `check_word` and `score_word`.
 
@@ -324,8 +324,8 @@ def uses_only(word, available):
 ```
 
 `uses_all` and `uses_only` are **very** similar: 
-1. Check out how to [loop over a string](2-python-basic-stuff-pt2.md#12-looping-over-a-string)
-2. Make sure to lower case letters (see [this](2-python-basic-stuff-pt2.md#15-linear-search) example)
+1. Check out how to [loop over a string](2-python-basic-stuff-pt2.md#12-looping-over-a-string).
+2. Make sure to lower case letters (see [this](2-python-basic-stuff-pt2.md#15-linear-search) example).
 
 ## 3. Text inspector
 
@@ -335,13 +335,13 @@ Let's inspect a book—The Strange Case of Dr. Jekyll and Mr. Hide by Robert Lou
 
 #### 3.1.1. Assignment 1
 
-Write a function called `clean_book` that removes everything except the book itself. In other words, `clean_book` removes everything before (and included)
+Write a function called `clean_book` that removes everything except the book itself. In other words, `clean_book` removes everything before (and included).
 
-`*** START OF THIS PROJECT GUTENBERG EBOOK THE STRANGE CASE OF DR. ***`
+`*** START OF THIS PROJECT GUTENBERG EBOOK THE STRANGE CASE OF DR. ***`.
 
-and after (and included)
+and after (and included).
 
-`*** END OF THIS PROJECT GUTENBERG EBOOK THE STRANGE CASE OF DR. ***`
+`*** END OF THIS PROJECT GUTENBERG EBOOK THE STRANGE CASE OF DR. ***`.
 
 Here's an outline of the function that includes [doctests](2-python-basic-stuff-pt2.md#16-doctests). Fill in the function and then check that all tests pass.
 

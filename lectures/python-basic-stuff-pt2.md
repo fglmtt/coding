@@ -1,5 +1,8 @@
 # Python: Basic stuff - Pt. 2
 
+### Filippo Poltronieri <filippo.poltronieri@unife.it>
+#### Slides: Mattia Fogli <mattia.fogli@unife.it>
+
 ## Table of contents
 
 - [1. Iteration](#1-iteration)
@@ -42,18 +45,18 @@
 
 ### 1.1. Loops
 
-Statements that run one or more statements
+Statements that run one or more statements:
 
 ```python
 for i in range(3):
 	print(i)
 ```
 
-- `range` creates a sequence of values, i.e., `[0, 1, 2]` 
-- `for` statement (with `i` as loop variable)
-	1. Assigns the next value from `range` to `i`
-	2. Runs the body
-	3. Loops back around the header
+- `range` creates a sequence of values, i.e., `[0, 1, 2]`.
+- `for` statement (with `i` as loop variable).
+	1. Assigns the next value from `range` to `i`.
+	2. Runs the body.
+	3. Loops back around the header.
 
 ### 1.2. Looping over a string
 
@@ -77,9 +80,9 @@ for line in open("words.txt"):
 	print(line)
 ```
 
-`for` loops over `words.txt` line by line
-- `open` returns a file object
-- `words.txt` is [this](../code/data/words.txt) file
+`for` loops over `words.txt` line by line:
+- `open` returns a file object.
+- `words.txt` is [this](../code/data/words.txt) file.
 
 ---
 
@@ -91,9 +94,9 @@ for line in open("words.txt"):
 'aah\n'
 ```
 
-`readline` is a method of `f`
-- Reads characters from the file until it gets to a newline (`\n`)
-- Returns the result as a `str`
+`readline` is a method of `f`:
+- Reads characters from the file until it gets to a newline (`\n`).
+- Returns the result as a `str`.
 
 ### 1.4. Looping and counting
 
@@ -103,32 +106,32 @@ for line in open("words.txt"):
 	total += 1
 ```
 
-`total = 0` is a variable initialization
-- Creates a new variable (`total`) and gives it a value (`0`)
+`total = 0` is a variable initialization:
+- Creates a new variable (`total`) and gives it a value (`0`).
 
-`total += 1` is a variable update
-- Gives a new value to a variable that already exists
-- `+=` is an augmented assignment operator
+`total += 1` is a variable update:
+- Gives a new value to a variable that already exists.
+- `+=` is an augmented assignment operator.
 
 ---
 
-Initialization $\rightarrow$ update
+Initialization $\rightarrow$ update:
 
 ```python
 for line in open("words.txt"):
 	total += 1                   # ERROR
 ```
 
-`total += 1` means `total = total + 1`
-- Get the current value of `total`
-- Add `1`
-- Assign the result back to `total`
+`total += 1` means `total = total + 1`:
+- Get the current value of `total`.
+- Add `1`.
+- Assign the result back to `total`.
 
-Python evaluates `total + 1` first, but `total` does **not** exist
+Python evaluates `total + 1` first, but `total` does **not** exist.
 
 ### 1.5. Linear search
 
-A computational pattern that searches through a sequence of elements  and stops when it finds what it is looking for
+A computational pattern that searches through a sequence of elements  and stops when it finds what it is looking for:
 
 ```python
 def uses_any(word, letters):
@@ -138,12 +141,12 @@ def uses_any(word, letters):
     return False
 ```
 
-- `lower` is a method that can be called on `str`
-- `in` is both used for iteration and membership
+- `lower` is a method that can be called on `str`.
+- `in` is both used for iteration and membership.
 
 ### 1.6. Doctests
 
-Strings at the beginning of a function that test functions
+Strings at the beginning of a function that test functions:
 
 ```python
 def uses_any(word, letters):
@@ -163,21 +166,22 @@ def uses_any(word, letters):
 
 ---
 
-Each test consists of two lines
-1.  `>>>` followed by an expression
-2.  The value the expression should have if the function works correctly
+Each test consists of two lines.
+1.  `>>>` followed by an expression.
+2.  The value the expression should have if the function works correctly.
 
-For example
-1. `>>> uses_any('apple', 'xyz')` 
-2. `False` 
+For example:
+1. `>>> uses_any('apple', 'xyz')`.
+2. `False`.
 
-as `apple` does not use any of `xyz` 
+as `apple` does not use any of `xyz`.
 
 ---
 
 `uses_any.py` (see [here](../code/uses_any.py)):
 
 ```python
+## words.py
 def uses_any(word, letters):
     """
 	Check if a word uses any of a list of letters
@@ -199,9 +203,9 @@ if __name__ == "__main__":
 
 ---
 
-The interpreter changes `__name__` as follows
-- If the program runs as a script, `__name__` equals  `"__main__"`
-- If the program is imported, `__name__` equals the module name
+The interpreter changes `__name__` as follows:
+- If the program runs as a script, `__name__` equals  `"__main__"`.
+- If the program is imported, `__name__` equals the module name.
 
 ```python
 if __name__ == "__main__":
@@ -209,9 +213,9 @@ if __name__ == "__main__":
     doctest.testmod()
 ```
 
-Tests run only when the program is executed as a script
+Tests run only when the program is executed as a script.
 
-Convention is to place this `if` a the bottom for clarity
+Convention is to place this `if` a the bottom for clarity.
 
 ---
 
@@ -236,17 +240,17 @@ ok
 Test passed.
 ```
 
-`-v` prints
-- A log of what the `doctest` module is trying
-- A summary at the end
+`-v` prints:
+- A log of what the `doctest` module is trying.
+- A summary at the end.
 
 ## 2. Strings
 
 ### 2.1. Strings are sequences
 
-A string is a sequence of characters. In other words
-- A string is an ordered collection of characters
-- Each character is identified by an integer index
+A string is a sequence of characters. In other words:
+- A string is an ordered collection of characters.
+- Each character is identified by an integer index.
 
 ```shell
 >>> fruit = 'apple'
@@ -258,7 +262,7 @@ A string is a sequence of characters. In other words
 
 ### 2.2. String slices
 
-Parts of a strings specified by ranges of indices
+Parts of a strings specified by ranges of indices:
 
 ```shell
 >>> fruit = 'apple'
@@ -266,9 +270,9 @@ Parts of a strings specified by ranges of indices
 'app'
 ```
 
-The `[n:m]` operator
-- Returns from the `n`th to the `m`th character
-- Including the `n`th, but excluding the `m`th
+The `[n:m]` operator:
+- Returns from the `n`th to the `m`th character.
+- Including the `n`th, but excluding the `m`th.
 
 ---
 
@@ -281,13 +285,13 @@ The `[n:m]` operator
 ''
 ```
 
-- If `[:m]` $\rightarrow$ slice starts at the beginning
-- If `[n:]` $\rightarrow$ slice goes to the end 
-- If `n` $\ge$ `m` $\rightarrow$ empty string
+- If `[:m]` $\rightarrow$ slice starts at the beginning.
+- If `[n:]` $\rightarrow$ slice goes to the end.
+- If `n` $\ge$ `m` $\rightarrow$ empty string.
 
 ### 2.3. Strings are immutable
 
-String elements cannot be changed
+String elements cannot be changed:
 
 ```shell
 >>> fruit = 'apple'
@@ -303,7 +307,7 @@ TypeError: 'str' object does not support item assignment
 
 ### 2.4. String methods
 
-Several methods can be called on string objects
+Several methods can be called on string objects:
 
 ```shell
 >>> fruit = 'apple'
@@ -313,15 +317,15 @@ Several methods can be called on string objects
 'apple'
 ```
 
-The dot operator specifies
-- The name of the method (`upper`)
-- The name of the `str` object to apply the method to (`fruit`)
+The dot operator specifies:
+- The name of the method (`upper`).
+- The name of the `str` object to apply the method to (`fruit`).
 
 ## 3. Lists
 
 ### 3.1. Lists are sequences
 
-Sequences of values, which can be of any type
+Sequences of values, which can be of any type:
 
 ```shell
 >>> numbers = [42, 123]
@@ -329,13 +333,13 @@ Sequences of values, which can be of any type
 >>> t = ['spam', 2.0, 5, [10, 20]]
 ```
 
-`t` is a nested list, i.e., a list that is an element of another list
+`t` is a nested list, i.e., a list that is an element of another list.
 
 ### 3.2. Lists are mutable
 
-Unlike `str` objects, which are immutable
+Unlike `str` objects, which are immutable.
 
-`list` indices work the same way as `str` indices
+`list` indices work the same way as `str` indices:
 
 ```shell
 >>> numbers = [42, 123]
@@ -346,7 +350,7 @@ Unlike `str` objects, which are immutable
 
 ### 3.3. List slices
 
-The slice operator works on lists as it works on strings
+The slice operator works on lists as it works on strings:
 
 ```shell
 >>> letters = ['a', 'b', 'c', 'd']
@@ -356,13 +360,13 @@ The slice operator works on lists as it works on strings
 ['a', 'b', 'c', 'd']
 ```
 
-- If `[:]`, the slice is a copy of the whole list 
+- If `[:]`, the slice is a copy of the whole list.
 
 ### 3.4. List operations
 
-There are only two operators that work with lists
-- `+` joins two lists (concatenation)
-- `*` makes multiple copies and concatenates
+There are only two operators that work with lists:
+- `+` joins two lists (concatenation).
+- `*` makes multiple copies and concatenates.
 
 | Built-in function | Description                 |
 | ----------------- | --------------------------- |
@@ -414,7 +418,7 @@ There are only two operators that work with lists
 
 ### 3.6. Lists and strings
 
-List of characters $\ne$ string
+List of characters $\ne$ string:
 
 ```shell
 >>> s = 'apple'
@@ -431,8 +435,8 @@ AttributeError: 'str' object has no attribute 'pop'
 
 ---
 
-- Most list methods modify the original list and return `None`
-- String methods return a new string (strings are immutable)
+- Most list methods modify the original list and return `None`.
+- String methods return a new string (strings are immutable).
 
 ```shell
 >>> l = [1, 2, 3]
@@ -443,7 +447,7 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'remove'
 ```
 
-`l` is `NoneType` because `remove` returns `None`
+`l` is `NoneType` because `remove` returns `None`.
 
 ### 3.7. Looping through a list
 
@@ -459,11 +463,11 @@ AttributeError: 'NoneType' object has no attribute 'remove'
 5
 ```
 
-A `for` loop over an empty list `[]` never runs the body
+A `for` loop over an empty list `[]` never runs the body.
 
 ### 3.8. Objects and values
 
-`is` checks whether two variables refer to the same object
+`is` checks whether two variables refer to the same object:
 
 ```shell
 >>> a = 'apple'
@@ -472,9 +476,9 @@ A `for` loop over an empty list `[]` never runs the body
 True
 ```
 
-`a` and `b` refer to the same `str` object
-- Have the same value (equivalent)
-- Are the same object (identical)
+`a` and `b` refer to the same `str` object:
+- Have the same value (equivalent).
+- Are the same object (identical).
 
 ---
 
@@ -485,13 +489,13 @@ True
 False
 ```
 
-`a` and `b` refer to two different `list` objects
-- Have the same value (equivalent)
-- But are not identical
+`a` and `b` refer to two different `list` objects:
+- Have the same value (equivalent).
+- But are not identical.
 
 ### 3.9. References and aliases
 
-A reference is the association of a variable with an object
+A reference is the association of a variable with an object:
 
 ```shell
 >>> a = [1, 2, 3]
@@ -500,13 +504,13 @@ A reference is the association of a variable with an object
 True
 ```
 
-The object `[1, 2, 3]` has two references, i.e., `a` and `b`
+The object `[1, 2, 3]` has two references, i.e., `a` and `b`.
 
-An object with more than one reference is aliased
+An object with more than one reference is aliased.
 
 ---
 
-If the aliased object is mutable, changes made with one reference affect the other
+If the aliased object is mutable, changes made with one reference affect the other:
 
 ```shell
 >>> a = [1, 2, 3]
@@ -516,11 +520,11 @@ If the aliased object is mutable, changes made with one reference affect the oth
 [5, 2, 3]
 ```
 
-In general, avoid aliasing when working with mutable objects
+In general, avoid aliasing when working with mutable objects.
 
 ---
 
-When you pass a list to a function, the function gets a reference
+When you pass a list to a function, the function gets a reference:
 
 ```shell
 >>> def pop_first(l):
@@ -533,13 +537,13 @@ When you pass a list to a function, the function gets a reference
 [2, 3]
 ```
 
-`l` and `numbers`are aliases for the same object
+`l` and `numbers`are aliases for the same object.
 
 ## 4. Dictionaries
 
 ### 4.1. A dictionary is a mapping
 
-Objects that contain key-value pairs, aka items
+Objects that contain key-value pairs, aka items:
 
 ```shell
 >>> numbers = {}          # or numbers = dict()
@@ -551,13 +555,13 @@ Objects that contain key-value pairs, aka items
 {'zero': 0, 'one': 1, 'two': 2}
 ```
 
-Each key (`zero`, `one`, and `two`) maps to a value (`0`, `1`, and `2`)
+Each key (`zero`, `one`, and `two`) maps to a value (`0`, `1`, and `2`).
 
 ### 4.2. Key search is very fast
 
-Dictionaries are implemented using hash tables
-- Significant memory overhead
-- Fast access regardless of the size (as long as it fits in memory)
+Dictionaries are implemented using hash tables:
+- Significant memory overhead.
+- Fast access regardless of the size (as long as it fits in memory).
 
 ![Hash table](images/hash-table.svg)
 
@@ -572,8 +576,8 @@ for n in needles:
 		found += 1
 ```
 
-- `haystack` contains floats
-- `needles` is a list of 1000 floats (50% picked from `haystack`)
+- `haystack` contains floats.
+- `needles` is a list of 1000 floats (50% picked from `haystack`).
 
 ---
 
@@ -587,9 +591,9 @@ for n in needles:
 
 ---
 
-With dictionaries, mutable types 
-- Can be used as values
-- Cannot be used as keys
+With dictionaries, mutable types:
+- Can be used as values.
+- Cannot be used as keys.
 
 ```shell
 >>> d = {'a': 1, 'b': [1, 2]}
@@ -624,13 +628,15 @@ c 3
 3
 ```
 
+> [!info] Exercise
+> Let's finish the last assignement [[python-basic-stuff-lab#3.1.2. Assignment 2]].
 ## 5. Tuples
 
 ### 5.1. Tuples are like lists
 
-Like a list, a tuple is
-- A sequence of values
-- Indexed by integers
+Like a list, a tuple is:
+- A sequence of values.
+- Indexed by integers.
 
 ```shell
 >>> t = ('a', 'b', 'c', 'd') # () are optional
@@ -651,11 +657,11 @@ Like a list, a tuple is
 <class 'tuple'>
 ```
 
-Note that a single value in parenthesis is not a tuple
+Note that a single value in parenthesis is not a tuple.
 
 ---
 
-Most list operators also work with tuple
+Most list operators also work with tuple:
 
 ```shell
 >>> t1 = ('h', 'e', 'l')
@@ -670,7 +676,7 @@ Most list operators also work with tuple
 
 ### 5.2. But tuples are immutable
 
-Bracket operator does not work
+Bracket operator does not work:
 
 ```shell
 >>> t = ('h', 'e', 'l', 'l', 'o')
@@ -682,7 +688,7 @@ TypeError: 'tuple' object does not support item assignment
 
 ---
 
-There are no methods like `append` or `remove`
+There are no methods like `append` or `remove`:
 
 ```shell
 >>> t = ('h', 'e', 'l', 'l', 'o')
@@ -694,7 +700,7 @@ AttributeError: 'tuple' object has no attribute 'remove'
 
 ---
 
-Since tuples are immutable, they are hashable
+Since tuples are immutable, they are hashable:
 
 ```shell
 >>> d = dict()
@@ -706,7 +712,7 @@ Since tuples are immutable, they are hashable
 
 ### 5.3. Tuple assignment
 
-Values are assigned to variables from left to right
+Values are assigned to variables from left to right:
 
 ```shell
 >>> a, b = 1, 2
@@ -720,7 +726,7 @@ Values are assigned to variables from left to right
 
 ---
 
-If the left side is a tuple, the right side can be any kind of sequence
+If the left side is a tuple, the right side can be any kind of sequence:
 
 ```shell
 >>> email = "mattia.fogli@unife.it"
@@ -731,7 +737,7 @@ If the left side is a tuple, the right side can be any kind of sequence
 
 ---
 
-Useful to swap the values of two variables
+Useful to swap the values of two variables:
 
 ```shell
 >>> a, b = 1, 2
@@ -742,11 +748,11 @@ Useful to swap the values of two variables
 (2, 1)
 ```
 
-This works because the right side is evaluated before  assignments
+This works because the right side is evaluated before  assignments.
 
 ---
 
-Also useful to loop through dictionaries
+Also useful to loop through dictionaries:
 
 ```shell
 >>> d = {'zero': 0, 'one': 1, 'two': 2}
@@ -770,7 +776,7 @@ Functions can only return a single value, but if that value is a tuple...
 
 ### 5.5. Argument packing
 
-Collecting multiple arguments into a tuple
+Collecting multiple arguments into a tuple:
 
 ```shell
 >>> def mean(*args):
@@ -782,7 +788,11 @@ Collecting multiple arguments into a tuple
 3.0
 ```
 
-Parameters that begins with the `*` operator packs
+Parameters that begins with the `*` operator packs.
+
+> [!info] Exercise
+> Let's define our own print function!
+
 
 ---
 
@@ -796,7 +806,7 @@ TypeError: divmod expected 2 arguments, got 1
 (3, 1)
 ```
 
-Arguments that begins with the `*` operator unpacks
+Arguments that begins with the `*` operator unpacks.
 
 ## Glossary
 

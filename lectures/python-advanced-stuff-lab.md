@@ -1,5 +1,7 @@
 # Python: Advanced stuff - Lab
 
+### Filippo Poltronieri <filippo.poltronieri@unife.it>
+#### Slides: Mattia Fogli <mattia.fogli@unife.it>
 ## Table of contents
 
 - [1. Get started](#1-get-started)
@@ -27,13 +29,13 @@
 
 ### 1.1. Assignment
 
-1. [Set up the development environment](1-python-basic-stuff-pt1.md#16-development-environment)
-2. Try out the examples provided in the previous lectures
-	1. [Python: Basic stuff - Pt. 1](1-python-basic-stuff-pt1.md)
-	2. [Python: Basic stuff - Pt. 2](2-python-basic-stuff-pt2.md)
-	3. [Python: Advanced stuff](4-python-advanced-stuff.md)
-3. Complete the previous assignments
-	1. [Python: Basic stuff - Lab](3-python-basic-stuff-lab.md)
+1. [Set up the development environment](1-python-basic-stuff-pt1.md#16-development-environment).
+2. Try out the examples provided in the previous lectures.
+	1. [Python: Basic stuff - Pt. 1](1-python-basic-stuff-pt1.md).
+	2. [Python: Basic stuff - Pt. 2](2-python-basic-stuff-pt2.md).
+	3. [Python: Advanced stuff](4-python-advanced-stuff.md).
+3. Complete the previous assignments.
+	1. [Python: Basic stuff - Lab](3-python-basic-stuff-lab.md).
 
 ### 1.2. Hints
 
@@ -43,7 +45,7 @@
 $ python <your_program>.py
 ```
 
-Depending on your system, you may have to use `python` or `python3`
+Depending on your system, you may have to use `python` or `python3`.
 
 #### 1.2.2. Enable the interactive mode
 
@@ -51,7 +53,7 @@ Depending on your system, you may have to use `python` or `python3`
 $ python
 ```
 
-Depending on your system, you may have to use `python` or `python3`
+Depending on your system, you may have to use `python` or `python3`.
 
 ## 2. Duplicate finder
 
@@ -174,11 +176,11 @@ Write `__str__` method (see [special methods](4-python-advanced-stuff.md#34-sp
 
 #### 3.1.3. Assignment 3
 
-Make `Date` objects [totally ordered](4-python-advanced-stuff.md#42-totally-ordered-set-of-objects). Check that 
-1. `1933-06-22 > 1900-01-01`
-2. `1933-06-22 <= 2000-01-01` 
-3. `1933-06-22 == 1933-06-22`
-4. The method `sort` works correctly on a list of `Date` objects
+Make `Date` objects [totally ordered](4-python-advanced-stuff.md#42-totally-ordered-set-of-objects). Check that:
+1. `1933-06-22 > 1900-01-01`.
+2. `1933-06-22 <= 2000-01-01`.
+3. `1933-06-22 == 1933-06-22`.
+4. The method `sort` works correctly on a list of `Date` objects.
 
 ## 4. Solutions
 

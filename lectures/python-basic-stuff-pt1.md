@@ -1,5 +1,8 @@
 # Python: Basic stuff - Pt. 1
 
+### Filippo Poltronieri <filippo.poltronieri@unife.it>
+#### Slides: Mattia Fogli <mattia.fogli@unife.it>
+
 ## Table of contents
 
 - [1. Introduction](#1-introduction)
@@ -49,21 +52,21 @@
 
 ### 1.1. Python
 
-A programming language
-- Object oriented
-- Dynamically typed
+A programming language:
+- Object oriented.
+- Dynamically typed.
 
-The **standard implementation** is [CPython](https://github.com/python/cpython), which
-- Is typically classified as interpreted
-- Provides an interactive mode
+The **standard implementation** is [CPython](https://github.com/python/cpython), which:
+- Is typically classified as interpreted.
+- Provides an interactive mode.
 
 ### 1.2. Object-oriented programming
 
-A programming paradigm based on the concepts of objects
+A programming paradigm based on the concepts of objects.
 
-An object consists of
-- Data in the form of fields, aka attributes
-- Code in the form of procedures, aka methods
+An object consists of:
+- Data in the form of fields, aka attributes.
+- Code in the form of procedures, aka methods.
 
 ```python
 class MyClass:
@@ -78,19 +81,19 @@ class MyClass:
 
 #### 1.3.1. Statically-typed languages
 
-- Types are bound to variables
-- Types are checked at **compile time**
+- Types are bound to variables.
+- Types are checked at **compile time**.
 
 ```java
 String s = "abcd";
 ```
 
-`s` will forever be a `String`
+`s` will forever be a `String`.
 
 #### 1.3.2. Dynamically-typed languages
 
-- Types are bound to values
-- Types are checked at **run time**
+- Types are bound to values.
+- Types are checked at **run time**.
 
 ```python
 s = "abcd"
@@ -98,15 +101,15 @@ s = 1
 s = ["a", 2, "c", 4]
 ```
 
-`s` was first a `str`, then an `int`, and lastly a `list`
+`s` was first a `str`, then an `int`, and lastly a `list`.
 
 ### 1.4. Compilation v. interpretation
 
-There is no such thing as compiled or interpreted languages
-- Any programming language can be implemented either way
-- Compilers and interpreters are **implementation methods**
+There is no such thing as compiled or interpreted languages:
+- Any programming language can be implemented either way.
+- Compilers and interpreters are **implementation methods**.
 
-Yes, this means that there are
+Yes, this means that there are:
 - [C interpreters](https://github.com/jpoirier/picoc)
 - [Python compilers](https://github.com/lcompilers/lpython) 
 
@@ -114,10 +117,10 @@ out there...
 
 #### 1.4.1. Compilation
 
-A program written in a language is translated into a program written in another language
-- Source language $\rightarrow$ object language
-- The compiler does this translation ($\rightarrow$)
-- The translated program means the same as the original one
+A program written in a language is translated into a program written in another language:
+- Source language $\rightarrow$ object language.
+- The compiler does this translation ($\rightarrow$).
+- The translated program means the same as the original one.
 
 ```shell
 $ gcc hello.c   # gcc is the compiler
@@ -127,8 +130,8 @@ hello           # output of a.out
 
 #### 1.4.2. Interpretation
 
-The interpreter performs operations on behalf of the program being executed in order to run it
-- An interpreter is just another program
+The interpreter performs operations on behalf of the program being executed in order to run it:
+- An interpreter is just another program.
 
 ```shell
 $ python hello.py   # python is the interpreter
@@ -137,7 +140,7 @@ hello               # output of hello.py
 
 #### 1.4.3. Is CPython compiled or interpreted?
 
-Technically both, although typically classified as interpreted
+Technically both, although typically classified as interpreted:
 
 ```mermaid
 stateDiagram
@@ -150,22 +153,22 @@ stateDiagram
 	CPython --> Computer: Machine code
 ```
 
-CPython compiles the source code in bytecode and interprets it
+CPython compiles the source code in bytecode and interprets it.
 
 ### 1.5. Interactive mode
 
-An interactive mode, aka read-eval-print loop (REPL)
-- Takes single user prompts (read)
-- Executes them (eval)
-- Returns the result to the user (print)
+An interactive mode, aka read-eval-print loop (REPL):
+- Takes single user prompts (read).
+- Executes them (eval).
+- Returns the result to the user (print).
 
-Typically, interpreters have an interactive mode. However
-- There are interpreters that are not interactive
-- There are compilers that are interactive
+Typically, interpreters have an interactive mode. However:
+- There are interpreters that are not interactive.
+- There are compilers that are interactive.
 
 #### 1.5.1. Is CPython interactive?
 
-Yes
+Yes:
 
 ```shell
 $ python            # enables interactive mode
@@ -182,13 +185,13 @@ hello               # print (P)
 | [Python](https://www.python.org/downloads/)           | 3.13.2      |
 | [VS Code](https://code.visualstudio.com/)             | last        |
 
-[This](https://code.visualstudio.com/docs/python/python-tutorial) tutorial on how to set up Python in VS Code
+[This](https://code.visualstudio.com/docs/python/python-tutorial) tutorial on how to set up Python in VS Code.
 
 ## 2. Types, values, and expressions
 
 ### 2.1. Arithmetic operators
 
-Symbols that denote an arithmetic operations
+Symbols that denote an arithmetic operations.
 
 | Symbol | Meaning          |
 | ------ | ---------------- |
@@ -202,24 +205,24 @@ Symbols that denote an arithmetic operations
 
 ### 2.2. Types of numbers
 
-A type is a category of values
+A type is a category of values.
 
 | Type           | Class   | Meaning                      |
 | -------------- | ------- | ---------------------------- |
 | Integer        | `int`   | Numbers with no decimal part |
 | Floating-point | `float` | Numbers with decimal parts   |
 
-For example
-- `+`, `-`, `*`, or  `//` integers, the result is an integer
-- `/` integers, the result is a floating-point number
+For example:
+- `+`, `-`, `*`, or  `//` integers, the result is an integer.
+- `/` integers, the result is a floating-point number.
 
 ### 2.3. Expressions
 
-Combinations of variables, values, and operators. Every expression has a value
+Combinations of variables, values, and operators. Every expression has a value.
 
-Order of operations
-- `**` $\rightarrow$ `*` and `/` $\rightarrow$ `+` and `-`
-- Parentheses influence the order
+Order of operations:
+- `**` $\rightarrow$ `*` and `/` $\rightarrow$ `+` and `-`.
+- Parentheses influence the order.
 
 ```shell
 >>> 12 + 5 * 6
@@ -230,11 +233,11 @@ Order of operations
 
 ### 2.4. Strings
 
-Sequences of characters
+Sequences of characters.
 
-There are only two operators that work with strings
-- `+` joins two strings (concatenation)
-- `*` makes multiple copies and concatenates
+There are only two operators that work with strings:
+- `+` joins two strings (concatenation).
+- `*` makes multiple copies and concatenates.
 
 ```shell
 >>> 'Well, ' + "it's a small " + 'world.'
@@ -245,7 +248,7 @@ There are only two operators that work with strings
 
 ### 2.5. Values and types
 
-Every value has a type
+Every value has a type.
 
 | Value             | Type                  | Class   |
 | ----------------- | --------------------- | ------- |
@@ -255,7 +258,7 @@ Every value has a type
 
 ---
 
-The function `type` returns the type of any value
+The function `type` returns the type of any value:
 
 ```shell
 >>> type(2)
@@ -268,7 +271,7 @@ The function `type` returns the type of any value
 
 ---
 
-`int`, `float`, and `str` can be used as functions to convert values
+`int`, `float`, and `str` can be used as functions to convert values:
 
 ```shell
 >>> int(42.9)
@@ -283,12 +286,12 @@ The function `type` returns the type of any value
 
 ### 3.1. Variables
 
-Names that refer to values
+Names that refer to values.
 
-Assignment statements create variables. These consist of
-- A variable name on the left (e.g., `n`)
-- The equals operator (`=`)
-- An expression on the right (e.g., `42`)
+Assignment statements create variables. These consist of:
+- A variable name on the left (e.g., `n`).
+- The equals operator (`=`).
+- An expression on the right (e.g., `42`).
 
 ```shell
 >>> n = 42
@@ -296,9 +299,9 @@ Assignment statements create variables. These consist of
 
 ---
 
-Note that
-- An assignment statement has no output
-- The created variable can then be used as an expression
+Note that:
+- An assignment statement has no output.
+- The created variable can then be used as an expression.
 
 ```shell
 >>> n
@@ -309,20 +312,20 @@ Note that
 
 ### 3.2. Variable names
 
-What you **can** do
-- As long as you like
-- Letters and numbers
+What you **can** do:
+- As long as you like.
+- Letters and numbers.
 
-What you **cannot** do
-- Begin with a number
-- Punctuation, except for `_`
-- Keywords (e.g., `class`)
+What you **cannot** do:
+- Begin with a number.
+- Punctuation, except for `_`.
+- Keywords (e.g., `class`).
 
 ---
 
-What you **should** do (convention)
-- Lower case letters
-- `_` as word separator
+What you **should** do (convention):
+- Lower case letters.
+- `_` as word separator.
 
 ```python
 var = "hello, world"    # good
@@ -332,10 +335,10 @@ multipleWords = 84      # bad
 
 ### 3.3. Modules
 
-Collections of variables and functions (and classes)
+Collections of variables and functions (and classes).
 
-`import` statements make available variables and functions defined in other modules
-- Use such variables or functions with the dot operator (`.`)
+`import` statements make available variables and functions defined in other modules:
+- Use such variables or functions with the dot operator (`.`).
 
 ```shell
 >>> import math
@@ -347,16 +350,16 @@ Collections of variables and functions (and classes)
 
 ### 3.4. Statements
 
-Units of code that have an effect, but no value
+Units of code that have an effect, but no value.
 
 | Statement  | Effect                                |
 | ---------- | ------------------------------------- |
 | Assignment | Create a variable and give it a value |
 | Import     | Import a module                       |
 
-Evaluation v. execution
-- Evaluation is to compute the value of an expression
-- Execution is to run a statement
+Evaluation v. execution:
+- Evaluation is to compute the value of an expression.
+- Execution is to run a statement.
 
 ### 3.5. Errors
 
@@ -384,16 +387,16 @@ TypeError: unsupported operand type(s) for /: 'str' and 'int'
 
 ### 4.1. Arguments
 
-Values provided to a function when the function is called
+Values provided to a function when the function is called:
 
 ```shell
 >>> int('101')
 101
 ```
 
-`int` is the function being called and `'101'` is the argument
+`int` is the function being called and `'101'` is the argument.
 
-Some functions can take any number of arguments
+Some functions can take any number of arguments:
 
 ```shell
 >>> print('Any', 'number', 'of', 'arguments')
@@ -402,7 +405,7 @@ Any number of arguments
 
 ### 4.2. Function definitions
 
-A function definition specifies the name of a the function and the statements that run when the function is called
+A function definition specifies the name of a the function and the statements that run when the function is called:
 
 ```python
 def f():
@@ -410,30 +413,30 @@ def f():
 	print("world")
 ```
 
-- `def` indicates the beginning of a function definition
-- `f` is the function name (same rules as for variable names)
-- `()` after `f` indicates that `f` takes no arguments
+- `def` indicates the beginning of a function definition.
+- `f` is the function name (same rules as for variable names).
+- `()` after `f` indicates that `f` takes no arguments.
 
 ---
 
-The first line of a function definition is the header, which must end with a colon
+The first line of a function definition is the header, which must end with a colon:
 
 ```python
 def f():
 ```
 
-The rest is the body (must be indented)
+The rest is the body (must be indented):
 
 ```python
 	print("hello")
 	print("world")
 ```
 
-By convention, indentation is always 4 spaces
+By convention, indentation is always 4 spaces.
 
 ---
 
-A function definition creates a function object
+A function definition creates a function object:
 
 ```shell
 >>> def f():
@@ -449,20 +452,20 @@ world
 
 ### 4.3. Parameters
 
-Variable names used inside a function to refer to the values passed as arguments
+Variable names used inside a function to refer to the values passed as arguments:
 
 ```python
 def f(p):
 	print(p)
 ```
 
-`f` takes a single argument, whose value is assigned to `p`
+`f` takes a single argument, whose value is assigned to `p`.
 
-Parameters and variables defined inside a function are local
+Parameters and variables defined inside a function are local.
 
 ### 4.4. Keyword arguments
 
-Arguments that include the name of parameters
+Arguments that include the name of parameters:
 
 ```shell
 >>> def f(p1, p2):
@@ -476,16 +479,16 @@ world
 
 ### 4.5. Return values
 
-Results that functions return
+Results that functions return.
 
-The `return` statement is used to return the result of a function
+The `return` statement is used to return the result of a function:
 
 ```python
 def repeat(word, n):
 	return word * n
 ```
 
-If there is no `return` statement, the function returns `None`
+If there is no `return` statement, the function returns `None`:
 
 ```python
 def repeat(word, n):
@@ -494,14 +497,14 @@ def repeat(word, n):
 
 ### 4.6. Docstrings
 
-Strings at the beginning of functions that explain interfaces
+Strings at the beginning of functions that explain interfaces.
 
-By convention, docstrings are triple-quoted strings
+By convention, docstrings are triple-quoted strings.
 
 A docstring should:
-- Explain concisely what the function does (not how it works)
-- Explain the effect of parameters on the behavior of the function
-- Indicate parameter types (if not obvious)
+- Explain concisely what the function does (not how it works).
+- Explain the effect of parameters on the behavior of the function.
+- Indicate parameter types (if not obvious).
 
 ---
 
@@ -518,11 +521,11 @@ def add(num1, num2):
 
 ### 4.7. Tracebacks
 
-List of functions that are executing, printed when an exception occurs
+List of functions that are executing, printed when an exception occurs.
 
-When a runtime error occurs, Python displays
-- The name of the function that was running
-- The name of the function that called it
+When a runtime error occurs, Python displays:
+- The name of the function that was running.
+- The name of the function that called it.
 - And so on...
 
 ---
@@ -546,7 +549,7 @@ NameError: name 'p' is not defined
 
 ### 5.1. Relational operators
 
-Operators that compare their operands
+Operators that compare their operands.
 
 | Symbol | Meaning             |
 | ------ | ------------------- |
@@ -559,18 +562,18 @@ Operators that compare their operands
 
 ### 5.2. Boolean expressions
 
-Expressions whose values are either `True`or `False`
+Expressions whose values are either `True`or `False`:
 
 ```shell
 >>> 5 == 5
 True
 ```
 
-`True`and `False` are of type `bool` (not `str`)
+`True`and `False` are of type `bool` (not `str`).
 
 ### 5.3. Logical operators
 
-Operators that combine boolean expressions
+Operators that combine boolean expressions.
 
 | Operation | Result                                       |
 | --------- | -------------------------------------------- |
@@ -580,11 +583,11 @@ Operators that combine boolean expressions
 
 ---
 
-Boolean operations always return
-- `0` or `False` for false
-- `1` or `True` for true
+Boolean operations always return:
+- `0` or `False` for false.
+- `1` or `True` for true.
 
-`or` and `and` always return one of their operands
+`or` and `and` always return one of their operands:
 
 ```shell
 >>> 42 and True
@@ -597,22 +600,22 @@ True
 
 ### 5.4. Conditional statements
 
-Statements that control the execution flow depending on some condition
+Statements that control the execution flow depending on some condition:
 
 ```python
 if x > 0:
 	print('x is positive')
 ```
 
-`if` statements have same structure as function definitions
-- `if x > 0:` is the header
-	- `print('x is positive')` is a block
+`if` statements have same structure as function definitions:
+- `if x > 0:` is the header.
+	- `print('x is positive')` is a block.
 
-If the condition (`x > 0`) is true, then run the block
+If the condition (`x > 0`) is true, then run the block.
 
 ---
 
-An `if`statement can have an `else` clause
+An `if`statement can have an `else` clause:
 
 ```python
 if x % 2 == 0:
@@ -621,11 +624,11 @@ else:
     print('x is odd')
 ```
 
-The condition must be true or false, exactly one branch will run
+The condition must be true or false, exactly one branch will run.
 
 ### 5.5. Chained conditionals
 
-Conditional statements with a series of alternative branches
+Conditional statements with a series of alternative branches:
 
 ```python
 if x < y:
@@ -638,12 +641,12 @@ else:
 
 ---
 
-There is no limit on the number of `elif` clauses
+There is no limit on the number of `elif` clauses.
 
-If there is an `else` clause, it must be at the end
+If there is an `else` clause, it must be at the end.
 
-Conditions are checked in order
-- If more than one condition is true, only the first true branch runs
+Conditions are checked in order:
+- If more than one condition is true, only the first true branch runs.
 
 ## Glossary
 

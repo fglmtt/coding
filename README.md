@@ -36,8 +36,10 @@ filippo.poltronieri@unife.it
 | --- | -------------------------------------------------------------------------------------------------------------- |
 | 1   | [Python: Basic stuff - Pt. 1](lectures/python-basic-stuff-pt1.md) and [Pt. 2](lectures/python-basic-stuff-pt2) |
 | 2   | [Python: Basic stuff - Lab](lectures/python-basic-stuff-lab.md)                                                |
-| 3   | [Python: Advanced stuff](lectures/python-advanced-stuff.md)                                                    |
-| 4   | [Python: Advanced stuff - Lab](lectures/python-advanced-stuff-lab.md)                                          |
+| 3   | [Python: Environments & Dependency Management](lectures/python-environments.md)                                |
+| 4   | [Python: Environments & Dependency Management - Lab](lectures/python-environments-lab.md)                      |
+| 5   | [Python: Advanced stuff](lectures/python-advanced-stuff.md)                                                    |
+| 6   | [Python: Advanced stuff - Lab](lectures/python-advanced-stuff-lab.md)                                          |
 
 ## AI-assisted coding
 
@@ -73,6 +75,6 @@ mattia.fogli@unife.it
 
 | #   | Title                                                                      |
 | --- | -------------------------------------------------------------------------- |
-| 5   | [Large language models for software engineering](lectures/llms-for-swe.md) |
-| 6   | [Prompt engineering](lectures/prompt-engineering.md)                       |
-| 7   | [GitHub Copilot](lectures/github-copilot.md)                               |
+| 7   | [Large language models for software engineering](lectures/llms-for-swe.md) |
+| 8   | [Prompt engineering](lectures/prompt-engineering.md)                       |
+| 9   | [GitHub Copilot](lectures/github-copilot.md)                               |
