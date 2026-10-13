@@ -35,8 +35,8 @@
 
 ### 1.1. Assignment
 
-1. Install [uv](python-environments.md#32-installing-uv).
-2. Pin a Python version, following [§3.3](python-environments.md#33-managing-python-versions).
+1. Install [uv](python-environments.md#32-installing-uv)
+2. Pin a Python version, following [§3.3](python-environments.md#33-managing-python-versions)
 
 ### 1.2. Hints
 
@@ -59,13 +59,13 @@ The API documentation is the only reference: read it before writing any code.
 
 #### 2.1.1. Assignment 1
 
-1. Create a new project called `joke-of-the-day`, following [§3.4](python-environments.md#34-projects-and-pyprojecttoml).
-2. Add [`requests`](https://pypi.org/project/requests/) as a dependency, following [§3.5](python-environments.md#35-adding-and-removing-dependencies).
+1. Create a new project called `joke-of-the-day`, following [§3.4](python-environments.md#34-projects-and-pyprojecttoml)
+2. Add [`requests`](https://pypi.org/project/requests/) as a dependency, following [§3.5](python-environments.md#35-adding-and-removing-dependencies)
 3. Inspect `pyproject.toml` and `uv.lock`: what changed after step 2?
 
 #### 2.1.2. Assignment 2
 
-Write a function called `search_jokes` that takes a keyword and returns a list of the jokes that contain it. Each joke is a `str`:
+Write a function called `search_jokes` that takes a keyword and returns a list of the jokes that contain it. Each joke is a `str`
 
 ```python
 import requests
@@ -81,8 +81,8 @@ def search_jokes(term):
     return []
 ```
 
-- Use the search endpoint, not the random one.
-- Ask the API for JSON, not plain text.
+- Use the search endpoint, not the random one
+- Ask the API for JSON, not plain text
 
 #### 2.1.3. Assignment 3
 
@@ -94,21 +94,21 @@ Run the whole program with [`uv run`](python-environments.md#37-running-code), t
 
 #### 2.2.1. Reading the API
 
-- Find the search endpoint and the parameters it accepts.
-- Find the header that asks for JSON.
-- Before writing the function, print the response once to see its structure, then decide which part you need.
+- Find the search endpoint and the parameters it accepts
+- Find the header that asks for JSON
+- Before writing the function, print the response once to see its structure, then decide which part you need
 
 #### 2.2.2. Third-party packages
 
-The [`requests`](https://requests.readthedocs.io/) library is a common way to call HTTP APIs:
+The [`requests`](https://requests.readthedocs.io/) library is a common way to call HTTP APIs
 
-- `requests.get` accepts `params` (a dictionary of query parameters) and `headers` (a dictionary of request headers).
-- `response.raise_for_status()` raises an exception if the request failed.
-- `response.json()` converts a JSON response into a Python object.
+- `requests.get` accepts `params` (a dictionary of query parameters) and `headers` (a dictionary of request headers)
+- `response.raise_for_status()` raises an exception if the request failed
+- `response.json()` converts a JSON response into a Python object
 
 ### 2.3. Variant without uv
 
-If `uv` cannot be installed, complete the same assignment with `venv` and `pip` (see [§2.2](python-environments.md#22-activating-and-deactivating) and [§2.3](python-environments.md#23-installing-packages) of the lecture):
+If `uv` cannot be installed, complete the same assignment with `venv` and `pip` (see [§2.2](python-environments.md#22-activating-and-deactivating) and [§2.3](python-environments.md#23-installing-packages) of the lecture)
 
 ```shell
 $ mkdir joke-of-the-day && cd joke-of-the-day
@@ -123,7 +123,7 @@ Put `search_jokes` and `main` in a file called `main.py`.
 
 Instead of `pyproject.toml` and `uv.lock`, inspect `requirements.txt`: it also lists the packages that `requests` needs, which you did not ask for directly.
 
-Run the program and its doctests with:
+Run the program and its doctests with
 
 ```shell
 $ python main.py
@@ -140,13 +140,13 @@ Not every project starts out using `uv`. A common task is adopting an existing `
 
 Create a directory called `legacy-word-counter` with a `requirements.txt` file that lists the one package the project needs: `tabulate`, a small library that prints rows of data as aligned tables.
 
-Then write a `word_counter.py` file that.
+Then write a `word_counter.py` file that
 
-1. Defines `most_common_words(filename, n=5)`: it returns the `n` most frequent words in the file, case-insensitively, as a list of `(word, count)` pairs.
-2. Defines `main()`: it prints those pairs as a table with the headers `Word` and `Count`.
-3. Reads [`stevenson_clean.txt`](../code/data/stevenson_clean.txt) from the course repository. If the project sits in `code/`, the relative path is `../data/stevenson_clean.txt`.
+1. Defines `most_common_words(filename, n=5)`: it returns the `n` most frequent words in the file, case-insensitively, as a list of `(word, count)` pairs
+2. Defines `main()`: it prints those pairs as a table with the headers `Word` and `Count`
+3. Reads [`stevenson_clean.txt`](../code/data/stevenson_clean.txt) from the course repository. If the project sits in `code/`, the relative path is `../data/stevenson_clean.txt`
 
-Migrate the project to `uv`, following [§3.9](python-environments.md#39-migrating-from-requirementstxt), then run it with `uv run`. The first five rows should be:
+Migrate the project to `uv`, following [§3.9](python-environments.md#39-migrating-from-requirementstxt), then run it with `uv run`. The first five rows should be
 
 ```
 Word      Count
@@ -171,14 +171,14 @@ Once the migration is done and `pyproject.toml`/`uv.lock` are in place, `require
 
 #### 3.2.2. Counting words
 
-- Reading a file line by line and splitting each line into words is a pattern you already know from [Python: Basic stuff - Pt. 2](python-basic-stuff-pt2.md#13-looping-over-a-file).
-- `collections.Counter` counts how many times each item appears, and its method `most_common(n)` returns the `n` most frequent items.
-- Remember that `"The"` and `"the"` are the same word for this exercise.
+- Reading a file line by line and splitting each line into words is a pattern you already know from [Python: Basic stuff - Pt. 2](python-basic-stuff-pt2.md#13-looping-over-a-file)
+- `collections.Counter` counts how many times each item appears, and its method `most_common(n)` returns the `n` most frequent items
+- Remember that `"The"` and `"the"` are the same word for this exercise
 
 #### 3.2.3. Printing tables
 
-- `tabulate(rows, headers=[...])` takes a list of rows, where each row is a tuple, and a list of headers.
-- Its output is a string: print it.
+- `tabulate(rows, headers=[...])` takes a list of rows, where each row is a tuple, and a list of headers
+- Its output is a string: print it
 
 ## 4. Reproduce it elsewhere
 

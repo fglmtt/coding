@@ -29,10 +29,10 @@
 
 ### 1.1. Assignment
 
-1. [Set up the development environment](1-python-basic-stuff-pt1.md#16-development-environment).
-2. Try out the examples provided in the previous lectures.
-	1. [Python: Basic stuff - Pt. 1](1-python-basic-stuff-pt1.md).
-	2. [Python: Basic stuff - Pt. 2](2-python-basic-stuff-pt2.md).
+1. [Set up the development environment](1-python-basic-stuff-pt1.md#16-development-environment)
+2. Try out the examples provided in the previous lectures
+	1. [Python: Basic stuff - Pt. 1](1-python-basic-stuff-pt1.md)
+	2. [Python: Basic stuff - Pt. 2](2-python-basic-stuff-pt2.md)
 
 ### 1.2. Hints
 
@@ -89,9 +89,9 @@ def check_word(word, available, required):
 
 #### 2.1.2. Assignment 2
 
-According to the rules:
-- Four-letter words are worth 1 point each.
-- Longer words earn 1 point per letter.
+According to the rules
+- Four-letter words are worth 1 point each
+- Longer words earn 1 point per letter
 - Each puzzle includes at least one “pangram” which uses every letter. These are worth 7 extra points!
 
 Write a function called `score_word`. Assume that the word is acceptable. Here’s an outline of the function with [doctests](2-python-basic-stuff-pt2.md#16-doctests).
@@ -116,7 +116,7 @@ def score_word(word, available):
 
 #### 2.1.3. Assignment 3
 
-Search [this](../code/data/words.txt) word list for acceptable words. This search requires to [loop over a file](2-python-basic-stuff-pt2.md#13-looping-over-a-file). Print the score of each of them as well as the total score. Expected output:
+Search [this](../code/data/words.txt) word list for acceptable words. This search requires to [loop over a file](2-python-basic-stuff-pt2.md#13-looping-over-a-file). Print the score of each of them as well as the total score. Expected output
 
 ```python
 accord 6
@@ -219,12 +219,12 @@ Total score 388
 
 #### 2.2.1. Let it fail
 
-1. Create the `spelling_bee.py` file.
-2. Copy and paste the `check_word` (see [§2.1.1](#211-assignment-1)) and `word_score` (see [§2.1.2](#212-assignment-2)) functions.
-3. Make sure doctests run when `spelling_bee` is executed as a script.
-4. Run `spelling_bee.py`.
+1. Create the `spelling_bee.py` file
+2. Copy and paste the `check_word` (see [§2.1.1](#211-assignment-1)) and `word_score` (see [§2.1.2](#212-assignment-2)) functions
+3. Make sure doctests run when `spelling_bee` is executed as a script
+4. Run `spelling_bee.py`
 
-Expected output:
+Expected output
 
 ```shell
 **********************************************************************
@@ -276,9 +276,9 @@ Got:
 
 #### 2.2.2. Problem decomposition
 
-Given that:
-- `check_word` must check whether the required letters are used.
-- `score_word` must check whether all the available letters are used to set the appropriate score.
+Given that
+- `check_word` must check whether the required letters are used
+- `score_word` must check whether all the available letters are used to set the appropriate score
 
 Therefore, `check_word` and `score_word` requires the same logic. This logic can be encapsulated in another function, say, `uses_all`, which will be called by both `check_word` and `score_word`.
 
@@ -323,9 +323,9 @@ def uses_only(word, available):
     return None
 ```
 
-`uses_all` and `uses_only` are **very** similar: 
-1. Check out how to [loop over a string](2-python-basic-stuff-pt2.md#12-looping-over-a-string).
-2. Make sure to lower case letters (see [this](2-python-basic-stuff-pt2.md#15-linear-search) example).
+`uses_all` and `uses_only` are **very** similar
+1. Check out how to [loop over a string](2-python-basic-stuff-pt2.md#12-looping-over-a-string)
+2. Make sure to lower case letters (see [this](2-python-basic-stuff-pt2.md#15-linear-search) example)
 
 ## 3. Text inspector
 

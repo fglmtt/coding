@@ -46,7 +46,7 @@
 
 Files are organized into directories.
 
-Every running program has a current working directory, which is the default directory for most operations:
+Every running program has a current working directory, which is the default directory for most operations
 
 ```shell
 >>> import os
@@ -56,14 +56,14 @@ Every running program has a current working directory, which is the default dire
 
 ---
 
-Note that:
-- `os` provides functions for working with files and directories.
-- `getcwd` returns the current working directory.
-- `/home/fglmtt/github.com/admin` is a path.
+Note that
+- `os` provides functions for working with files and directories
+- `getcwd` returns the current working directory
+- `/home/fglmtt/github.com/admin` is a path
 
-Absolute v. relative paths:
-- `/home/fglmtt/github.com/admin` is an absolute path.
-- `./data/words.txt` is a relative path.
+Absolute v. relative paths
+- `/home/fglmtt/github.com/admin` is an absolute path
+- `./data/words.txt` is a relative path
 
 ---
 
@@ -95,10 +95,10 @@ True
 
 ### 1.2. F-strings
 
-Strings that:
-- Have the letter `f` before the opening quotation mark.
-- Contain one or more expressions in curly braces.
-	- Expressions are automatically converted to `str`.
+Strings that
+- Have the letter `f` before the opening quotation mark
+- Contain one or more expressions in curly braces
+	- Expressions are automatically converted to `str`
 
 ```shell
 >>> d = {'one': 1}
@@ -141,9 +141,9 @@ TypeError: can only concatenate str (not "dict") to str
 
 Programs read and write files to store configuration data.
 
-Configuration data:
-- Specifies what a program should do and how.
-- Is typically written either in YAML or JSON.
+Configuration data
+- Specifies what a program should do and how
+- Is typically written either in YAML or JSON
 
 `yaml` and `json` provide functions to (de)serialize data accordingly.
 
@@ -181,9 +181,9 @@ json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes:
 {'config_1': 1, 'config_2': 2}
 ```
 
-Given that:
-- `str(config)` does not serialize `config` correctly.
-- `json.loads` expects `"` but gets `'`.
+Given that
+- `str(config)` does not serialize `config` correctly
+- `json.loads` expects `"` but gets `'`
 
 `json.loads` raises `json.decoder.JSONDecodeError`.
 
@@ -201,7 +201,7 @@ Given that:
 
 ### 1.4. Walking directories
 
-`walk.py`(see [here](../code/walk.py)):
+`walk.py`(see [here](../code/walk.py))
 
 ```python
 def walk(dirname):
@@ -214,7 +214,7 @@ def walk(dirname):
             walk(path)
 ```
 
-The output should be equivalent to:
+The output should be equivalent to
 
 ```shell
 $ ls -R
@@ -224,21 +224,21 @@ $ ls -R
 
 ### 2.1. Class definitions
 
-A class is a programmer-defined type:
+A class is a programmer-defined type
 
 ```python
 class Time:
     """Represent a time of day"""
 ```
 
-- The header indicates that the new class is called `Time`.
-- The body is just a docstring.
+- The header indicates that the new class is called `Time`
+- The body is just a docstring
 
 ---
 
 A class definition creates a class object, which is like a factory for creating objects.
 
-To create a `Time` object, just call `Time` as if it were a function:
+To create a `Time` object, just call `Time` as if it were a function
 
 ```shell
 >>> class Time:
@@ -257,7 +257,7 @@ To create a `Time` object, just call `Time` as if it were a function:
 
 Objects are passed to functions as aliases.
 
-The `copy` module provides the `copy` function that can duplicate any object:
+The `copy` module provides the `copy` function that can duplicate any object
 
 ```shell
 >>> import copy
@@ -298,21 +298,21 @@ The `copy` module provides two functions for copying objects.
 
 ### 2.3. Pure functions
 
-Functions:
-- Whose return values are identical for identical arguments.
-- Have no side effects (e.g., modification of mutable reference arguments).
+Functions
+- Whose return values are identical for identical arguments
+- Have no side effects (e.g., modification of mutable reference arguments)
 
 Anything that can be done with impure functions can also be done with pure functions.
 
-As a rule of thumb:
-- Write pure functions whenever it is reasonable.
-- Resort to impure functions only if there is an advantage.
+As a rule of thumb
+- Write pure functions whenever it is reasonable
+- Resort to impure functions only if there is an advantage
 
 ---
 
 The following is **not** idiomatic code and serves only as an example.
 
-`custom_time_v1.py` (see [here](../code/custom_time_v1.py)):
+`custom_time_v1.py` (see [here](../code/custom_time_v1.py))
 
 ```python
 import copy
@@ -417,7 +417,7 @@ False
 
 ### 3.1. Method definitions
 
-A method is a function that is defined inside a class definition:
+A method is a function that is defined inside a class definition
 
 ```python
 class Time:
@@ -439,8 +439,8 @@ def make_time(hour, minute, second):
     return time
 ```
 
-- `print_time` is an instance method.
-- `make_time` is a function.
+- `print_time` is an instance method
+- `make_time` is a function
 
 ### 3.2. Instance methods
 
@@ -450,29 +450,29 @@ Two ways to call `print_time`.
 
 Suppose `start` is an instance of `Time`.
 
-Function syntax (less common):
+Function syntax (less common)
 
 ```python
 Time.print_time(start)
 ```
 
-- `start` is the receiver and passed as a parameter.
+- `start` is the receiver and passed as a parameter
 
 ---
 
-Method syntax (idiomatic):
+Method syntax (idiomatic)
 
 ```python
 start.print_time()
 ```
 
-- `start` is the object the method is invoked on (receiver).
-- The receiver is assigned to the first parameter.
-	- `self` refers to `start` inside the method `print_time`.
+- `start` is the object the method is invoked on (receiver)
+- The receiver is assigned to the first parameter
+	- `self` refers to `start` inside the method `print_time`
 
 ### 3.3. Static methods
 
-Methods that can be invoked without an object as receiver:
+Methods that can be invoked without an object as receiver
 
 ```python
 class Time:
@@ -499,15 +499,15 @@ def make_time(hour, minute, second):
     return time
 ```
 
-- `print_time` is an instance method.
-- `int_to_time` is a static method.
-- `make_time` is a function.
+- `print_time` is an instance method
+- `int_to_time` is a static method
+- `make_time` is a function
 
 ---
 
 Static methods do not have `self` as a parameter.
 
-Static methods are invoked on the class object:
+Static methods are invoked on the class object
 
 ```python
 start = Time.int_to_time(34800)
@@ -526,7 +526,7 @@ Change the way operators and some functions work with an object.
 
 #### 3.4.1. Initializing objects
 
-`custom_time_v2.py` (see [here](../code/custom_time_v2.py), this is idiomatic code):
+`custom_time_v2.py` (see [here](../code/custom_time_v2.py), this is idiomatic code)
 
 ```python
 class Time:
@@ -593,7 +593,7 @@ class Time:
 
 #### 3.4.3. Overloading operators
 
-Operator overloading is the process of using special methods to change the way operators work with programmer-defined types:
+Operator overloading is the process of using special methods to change the way operators work with programmer-defined types
 
 ```python
 class Time:
@@ -667,7 +667,7 @@ False
 
 Variables defined inside a class definition, but not inside any method.
 
-`poker.py` (see [here](../code/poker.py)):
+`poker.py` (see [here](../code/poker.py))
 
 ```python
 class Card:
@@ -685,7 +685,7 @@ class Card:
 
 ---
 
-Class variables are associated with the class, rather than instances:
+Class variables are associated with the class, rather than instances
 
 ```shell
 >>> import poker
@@ -715,8 +715,8 @@ class Card:
         self.rank = rank
 ```
 
-- `suits` and `ranks` are class variables.
-- `suit` and `rank` are instance attributes.
+- `suits` and `ranks` are class variables
+- `suit` and `rank` are instance attributes
 
 ---
 
@@ -733,9 +733,9 @@ It is also legal to use the instance to access class variables.
 
 ### 4.2. Totally ordered set of objects
 
-A set of objects is totally ordered if:
-- Any two elements can be compared.
-- The results are consistent.
+A set of objects is totally ordered if
+- Any two elements can be compared
+- The results are consistent
 
 | Special method | Description                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -748,7 +748,7 @@ A set of objects is totally ordered if:
 
 ---
 
-The following methods make `Card` objects totally ordered:
+The following methods make `Card` objects totally ordered
 
 ```python
 class Card:
@@ -789,7 +789,7 @@ class Card:
 
 A method passing responsibility to another one.
 
-`poker.py` (see [here](../code/poker.py)):
+`poker.py` (see [here](../code/poker.py))
 
 ```python
 import random
@@ -869,14 +869,14 @@ King of Diamonds
 4 of Clubs
 ```
 
-- `Deck.sort` does not do any work except passing  responsibility.
-- `list.sort` uses the `__lt__` method to sort `Card` objects.
+- `Deck.sort` does not do any work except passing  responsibility
+- `list.sort` uses the `__lt__` method to sort `Card` objects
 
 ### 4.4. Parents and children
 
 Inheritance is the ability to define a new class that is a modified version of a previously defined class.
 
-`poker.py` (see [here](../code/poker.py)):
+`poker.py` (see [here](../code/poker.py))
 
 ```python
 class Hand(Deck):
@@ -888,12 +888,12 @@ class Hand(Deck):
 ```
 
 ---
-`Hand` inherits from `Deck`:
-- `Hand` is a child class of `Deck`, which is the parent class.
-- `Hand` objects can access methods defined in `Deck`.
+`Hand` inherits from `Deck`
+- `Hand` is a child class of `Deck`, which is the parent class
+- `Hand` objects can access methods defined in `Deck`
 
-`Hand` overrides `Deck.__init__`:
-- The interpreter invokes `Hand.__init__` for `Hand` objects.
+`Hand` overrides `Deck.__init__`
+- The interpreter invokes `Hand.__init__` for `Hand` objects
 
 ---
 
@@ -910,7 +910,7 @@ Ace of Spades
 
 #### 4.4.1. Polymorphism
 
-A method or operator that works with multiple types of objects:
+A method or operator that works with multiple types of objects
 
 ```shell
 >>> import poker
@@ -939,7 +939,7 @@ If you follow these rules, any method designed to work with instances of a paren
 
 ### 5.1. Sets
 
-Collections of unique elements:
+Collections of unique elements
 
 ```shell
 >>> s = set()
@@ -952,7 +952,7 @@ Collections of unique elements:
 
 ### 5.2. Counter
 
-Like sets, except that a `Counter` keeps track of how many times elements appear:
+Like sets, except that a `Counter` keeps track of how many times elements appear
 
 ```shell
 >>> import collections
@@ -967,7 +967,7 @@ Keys must be hashable.
 
 ### 5.3. Defaultdict
 
-Like dictionaries, except that a `defaultdict` automatically generates keys that do not exist:
+Like dictionaries, except that a `defaultdict` automatically generates keys that do not exist
 
 ```shell
 >>> import collections
@@ -986,7 +986,7 @@ defaultdict(<class 'list'>, {'zero': []})
 
 Expressions that use conditionals to select one of two values.
 
-`factorial` implemented with a conditional statement:
+`factorial` implemented with a conditional statement
 
 ```python
 def factorial(n):
@@ -998,22 +998,22 @@ def factorial(n):
 
 ---
 
-`factorial` implemented with a conditional expression:
+`factorial` implemented with a conditional expression
 
 ```python
 def factorial(n):
     return 1 if n == 0 else n * factorial(n-1)
 ```
 
-In general, conditional statements can be replaced with conditional expressions if both branches contain:
-- A single expression.
-- No statements.
+In general, conditional statements can be replaced with conditional expressions if both branches contain
+- A single expression
+- No statements
 
 ### 5.5. List comprehensions
 
 Concise ways to loop through a sequence and create a list.
 
-Traditional loop:
+Traditional loop
 
 ```python
 def capitalize_title(title):
@@ -1025,7 +1025,7 @@ def capitalize_title(title):
 
 ---
 
-With a list comprehension:
+With a list comprehension
 
 ```python
 def capitalize_title(title):
@@ -1035,9 +1035,9 @@ def capitalize_title(title):
     return ' '.join(t)
 ```
 
-- Brackets indicate that the result is a list.
-- The expression inside the brackets specifies the list elements.
-- `for` indicates what sequence is to loop through.
+- Brackets indicate that the result is a list
+- The expression inside the brackets specifies the list elements
+- `for` indicates what sequence is to loop through
 
 ## Glossary
 

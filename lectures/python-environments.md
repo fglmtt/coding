@@ -39,18 +39,18 @@
 
 Real programs depend on code written by other people, distributed as **packages**, e.g. **pandas** or **numpy**.
 
-Two projects on the same machine may need:
-- Different versions of the same package (e.g., project A needs `numpy 1.x`, project B needs `numpy 2.x`).
-- Different versions of Python itself.
+Two projects on the same machine may need
+- Different versions of the same package (e.g., project A needs `numpy 1.x`, project B needs `numpy 2.x`)
+- Different versions of Python itself
 
-Installing everything **globally**, system-wide:
-- Causes version conflicts between projects.
-- Makes it hard to reproduce a working setup on another machine ("it works on my machine").
-- Can break tools that the operating system itself relies on.
+Installing everything **globally**, system-wide
+- Causes version conflicts between projects
+- Makes it hard to reproduce a working setup on another machine ("it works on my machine")
+- Can break tools that the operating system itself relies on
 
 ---
 
-On Ubuntu 24.04 (the reference OS for this course, see [§1.6](python-basic-stuff-pt1.md#16-development-environment)), `pip` refuses to do this at all:
+On Ubuntu 24.04 (the reference OS for this course, see [§1.6](python-basic-stuff-pt1.md#16-development-environment)), `pip` refuses to do this at all
 
 ```shell
 $ pip install requests
@@ -71,10 +71,10 @@ This is not a bug: the OS is protecting its own Python installation from being b
 
 ### 1.2. Virtual environments
 
-**A virtual environment is an isolated Python installation**:
-- Has its own interpreter (or a reference to one) and its own installed packages.
-- Is independent of the system Python and of any other environment.
-- Is typically local to a single project.
+**A virtual environment is an isolated Python installation**
+- Has its own interpreter (or a reference to one) and its own installed packages
+- Is independent of the system Python and of any other environment
+- Is typically local to a single project
 
 ---
 
@@ -114,18 +114,18 @@ $ pip install Pillow   # install name
 
 ### 1.4. pip
 
-[`pip`](https://pip.pypa.io/) is the standard package installer for Python:
-- Downloads packages from PyPI.
-- Installs them into the Python environment it belongs to.
+[`pip`](https://pip.pypa.io/) is the standard package installer for Python
+- Downloads packages from PyPI
+- Installs them into the Python environment it belongs to
 
-Check which pip you are using:
+Check which pip you are using
 
 ```shell
 $ pip --version
 pip <version> from <path> (python <version>)
 ```
 
-Install a package:
+Install a package
 
 ```shell
 $ pip install requests
@@ -145,9 +145,9 @@ On a system where Python is managed by the OS (see [§1.1](#11-the-problem)), th
 $ python -m venv .venv
 ```
 
-Convention: name the environment directory `.venv` (or `venv`).
-- `venv` is a module of the standard library.
-- `.venv` is the directory it creates.
+Convention: name the environment directory `.venv` (or `venv`)
+- `venv` is a module of the standard library
+- `.venv` is the directory it creates
 
 ### 2.2. Activating and deactivating
 
@@ -175,7 +175,7 @@ Packages are installed **inside the active environment** only.
 
 ### 2.4. Freezing dependencies
 
-`requirements.txt` is a plain text file listing a project's dependencies:
+`requirements.txt` is a plain text file listing a project's dependencies
 
 ```shell
 $ pip freeze > requirements.txt
@@ -184,18 +184,18 @@ $ pip install -r requirements.txt   # on another machine
 
 ### 2.5. Limitations
 
-- `venv` only creates environments; it does not install or manage Python versions themselves.
-- `pip freeze` lists every installed package, without distinguishing what you asked for from what came along as a transitive dependency.
-- **There is no lockfile**: running `pip install -r requirements.txt` twice, weeks apart, can resolve to different versions unless every version is pinned by hand.
-- Dependency resolution can be slow on large projects.
+- `venv` only creates environments; it does not install or manage Python versions themselves
+- `pip freeze` lists every installed package, without distinguishing what you asked for from what came along as a transitive dependency
+- **There is no lockfile**: running `pip install -r requirements.txt` twice, weeks apart, can resolve to different versions unless every version is pinned by hand
+- Dependency resolution can be slow on large projects
 
 ## 3. uv
 
 ### 3.1. What is uv
 
-[`uv`](https://docs.astral.sh/uv/) is a single, fast tool that replaces `venv`, `pip`, `pip-tools`, and a Python version manager (e.g., `pyenv`):
-- Written in Rust, much faster than the standard toolchain.
-- Organizes a project around a single file: `pyproject.toml`.
+[`uv`](https://docs.astral.sh/uv/) is a single, fast tool that replaces `venv`, `pip`, `pip-tools`, and a Python version manager (e.g., `pyenv`)
+- Written in Rust, much faster than the standard toolchain
+- Organizes a project around a single file: `pyproject.toml`
 
 ### 3.2. Installing uv
 
@@ -212,7 +212,7 @@ $ uv --version
 
 ### 3.3. Managing Python versions
 
-`uv` can download and manage Python interpreters, independently of the system Python:
+`uv` can download and manage Python interpreters, independently of the system Python
 
 ```shell
 $ uv python install 3.13
@@ -228,7 +228,7 @@ $ cd my-project
 
 ---
 
-`uv init` creates:
+`uv init` creates
 
 ```shell
 .
@@ -241,7 +241,7 @@ $ cd my-project
 
 ---
 
-`pyproject.toml` is the standard, tool-agnostic file describing a Python project:
+`pyproject.toml` is the standard, tool-agnostic file describing a Python project
 
 ```toml
 [project]
@@ -264,10 +264,10 @@ $ uv remove requests
 
 ### 3.6. Lockfiles and reproducibility
 
-`uv add`/`uv remove` also create and update `uv.lock`:
-- Records the **exact** version of every dependency, direct and transitive.
-- Committed to version control alongside `pyproject.toml`.
-- Guarantees that everyone (and CI) installs the exact same versions.
+`uv add`/`uv remove` also create and update `uv.lock`
+- Records the **exact** version of every dependency, direct and transitive
+- Committed to version control alongside `pyproject.toml`
+- Guarantees that everyone (and CI) installs the exact same versions
 
 ```shell
 $ uv sync   # install exactly what uv.lock specifies
@@ -290,7 +290,7 @@ $ uv run python      # interactive mode, inside the environment
 
 ### 3.8. Development dependencies
 
-Some dependencies (e.g., a testing framework) are needed to **work on** a project, but not to **run** it:
+Some dependencies (e.g., a testing framework) are needed to **work on** a project, but not to **run** it
 
 ```shell
 $ uv add --dev pytest
@@ -313,7 +313,7 @@ dev = [
 
 ### 3.9. Migrating from requirements.txt
 
-An existing project that uses `pip` and `requirements.txt` can be adopted without rewriting it by hand:
+An existing project that uses `pip` and `requirements.txt` can be adopted without rewriting it by hand
 
 ```shell
 $ uv init
@@ -324,7 +324,7 @@ $ uv add -r requirements.txt
 
 ### 3.10. Running one-off tools
 
-`uvx` runs a command-line tool in a temporary, throwaway environment, without adding it to the project:
+`uvx` runs a command-line tool in a temporary, throwaway environment, without adding it to the project
 
 ```shell
 $ uvx cowsay -t "hello uv"
@@ -336,9 +336,9 @@ Useful for tools you want to run once (or occasionally), such as linters or form
 
 VS Code detects a `.venv` directory in the project folder and offers to select it as the Python interpreter.
 
-Once selected:
-- Code completion and linting use the packages installed in that environment.
-- Running or debugging a file uses that environment's interpreter, equivalent to `uv run`.
+Once selected
+- Code completion and linting use the packages installed in that environment
+- Running or debugging a file uses that environment's interpreter, equivalent to `uv run`
 
 ## 4. Other tools
 
@@ -346,7 +346,7 @@ Once selected:
 
 [`conda`](https://docs.conda.io/) is a general-purpose package and environment manager, popular in data science and machine learning.
 
-Unlike `pip`/`uv`, `conda` can also install **non-Python** dependencies (native libraries, compilers, even other languages):
+Unlike `pip`/`uv`, `conda` can also install **non-Python** dependencies (native libraries, compilers, even other languages)
 
 ```shell
 $ conda create -n my-env python=3.13
